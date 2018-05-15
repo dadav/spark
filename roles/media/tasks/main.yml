@@ -26,7 +26,9 @@
     - opus-tools
 
 - name: Install Metadata Anonymisation Toolkit and dependencies
-  aur: name={{ item }}
+  aur: 
+    name: "{{ item }}"
+    user: "{{ user.name }}"
   become: True
   become_user: "{{ user.name }}"
   with_items:

@@ -1,6 +1,8 @@
 ---
 - name: Install macchiato
-  aur: name=macchiato-git
+  aur: 
+    name: macchiato-git
+    user: "{{ user.name }}"
   become: True
   become_user: "{{ user.name }}"
   tags:

@@ -1,6 +1,8 @@
 ---
 - name: Install imv
-  aur: name=imv
+  aur: 
+    name: imv
+    user: "{{ user.name }}"
   become: True
   become_user: "{{ user.name }}"
   tags:

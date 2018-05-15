@@ -22,7 +22,9 @@
 #    - aur
 
 - name: Install pulseaudio-ctl
-  aur: name=pulseaudio-ctl
+  aur: 
+    name: pulseaudio-ctl
+    user: "{{ user.name }}"
   become: True
   become_user: "{{ user.name }}"
   tags:

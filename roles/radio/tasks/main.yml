@@ -1,9 +1,9 @@
 ---
 - name: Install GNUradio
-  pacman: name=gnuradio state=present
+  pacman: name=gnuradio user={{ user.name }}
 
 - name: Install hamlib
-  aur: name={{ item }}
+  aur: name={{ item }} user={{ user.name }}
   become: True
   become_user: "{{ user.name }}"
   with_items:

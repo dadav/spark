@@ -1,6 +1,8 @@
 ---
 - name: Install fldigi
   aur: name={{ item }} user={{ user.name }}
+  become: True
+  become_user: "{{ user.name }}"
   with_items:
     - cty
     - fldigi
@@ -10,6 +12,8 @@
 
 - name: Install wsjtx
   aur: name=wsjtx user={{ user.name }}
+  become: True
+  become_user: "{{ user.name }}"
   tags:
     - aur
 

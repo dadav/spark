@@ -2,7 +2,7 @@
 - name: Install khal, khard and friends
   aur:
     name: "{{ item }}"
-    state: present
+    user: "{{ user.name }}"
   become: True
   become_user: "{{ user.name }}"
   with_items:

@@ -29,6 +29,7 @@
 - name: Install vault and nomad
   aur:
     name: "{{ item }}"
+    user: "{{ user.name }}"
   become: True
   become_user: "{{ user.name }}"
   with_items:

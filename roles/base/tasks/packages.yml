@@ -46,6 +46,7 @@
 - name: Install AUR base packages
   aur:
     name: "{{ item }}"
+    user: "{{ user.name }}"
   become: True
   become_user: "{{ user.name }}"
   with_items: "{{ aur.packages }}"

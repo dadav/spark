@@ -9,6 +9,8 @@
 - name: Install Little Brother Database and friends
   aur:
     name: "{{ item }}"
-    state: present
+    user: "{{ user.name }}"
+  become: True
+  become_user: "{{ user.name }}"
   with_items:
     - lbdb

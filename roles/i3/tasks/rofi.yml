@@ -7,7 +7,9 @@
 - name: Install tools that extend/use rofi
   aur:
     name: "{{ item }}"
-    state: present
+    user: "{{ user.name }}"
+  become: True
+  become_user: "{{ user.name }}"
   with_items:
     - rofi-pass
     - rofi-dmenu

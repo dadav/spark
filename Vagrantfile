@@ -20,9 +20,9 @@ SCRIPT
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "testing.yml"
     ansible.config_file = "ansible.cfg"
-    ansible.verbose = "vvv"
+    # ansible.verbose = "vvv"
     ansible.become_user = 'root'
-    ansible.ask_become_pass = true
+    #ansible.ask_become_pass = true
     ansible.extra_vars = {
       vagrant_testing: true,
       dotfiles_ssh_key: '/home/mattias/.ssh/github_test'

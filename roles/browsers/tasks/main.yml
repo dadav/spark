@@ -71,7 +71,7 @@
 - name: Install tor-browser-en
   aur:
     name: tor-browser-en
-    state: present
+    user: "{{ user.name }}"
   become: True
   become_user: "{{ user.name }}"
   tags:

@@ -16,7 +16,9 @@
     - beets
 
 - name: Install python-pyacoustid
-  aur: name=python-pyacoustid
+  aur: 
+    name: python-pyacoustid
+    user: "{{ user.name }}"
   become: True
   become_user: "{{ user.name }}"
   tags:
@@ -24,7 +26,9 @@
     - beets
 
 - name: Install mp3val
-  aur: name=mp3val
+  aur: 
+    name: mp3val
+    user: "{{ user.name }}"
   become: True
   become_user: "{{ user.name }}"
   tags:

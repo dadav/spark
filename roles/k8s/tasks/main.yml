@@ -3,7 +3,7 @@
 - name: Install client tools for kubernetes
   aur:
     name: "{{ item }}"
-    state: present
+    user: "{{ user.name }}"
   with_items:
     - kubeadm-bin
     - minikube

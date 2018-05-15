@@ -2,6 +2,7 @@
 # Adapted from https://gist.github.com/wrecker/39ecb1eb1ab8ee1d0ce1
 - name: AUR | get metadata from AurJson api
   connection: local
+  become: False
   uri: >
     url=https://aur.archlinux.org/rpc.php?type=info&arg={{ pkg_name | mandatory }}
     return_content=yes
@@ -28,6 +29,7 @@
 - name: AUR | {{ pkg_name }} | download tarball
   when: version_check_result.changed
   connection: local
+  become: False
   get_url: >
     url='https://aur.archlinux.org{{ api_info.json.results.URLPath }}'
     dest='/tmp/'

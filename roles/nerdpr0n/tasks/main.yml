@@ -8,5 +8,6 @@
 - name: Install some nice things, coming from AUR
   aur:
     name: toilet
+    user: "{{ user.name }}"
   become: True
   become_user: "{{ user.name }}"

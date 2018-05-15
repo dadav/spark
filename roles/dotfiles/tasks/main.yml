@@ -2,7 +2,7 @@
 - name: Install rcm
   aur:
     name: rcm
-    state: present
+    user: "{{ user.name }}"
   become: True
   become_user: "{{ user.name }}"
   when: dotfiles is defined

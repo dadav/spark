@@ -3,11 +3,9 @@
   pacman: name=firejail state=present
 
 - name: Install firewarden
-  aur: 
+  aur:
     name: firewarden
-    state: present
-  become: True
-  become_user: "{{ user.name }}"
+    user: "{{ user.name }}"
   tags:
     - aur
 
