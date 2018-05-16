@@ -1,6 +1,6 @@
 vagrant_testing: false
 
-autologin: True
+autologin: False
 autologin_tty: 'tty1'
 
 gtk_theme_packages:
@@ -23,12 +23,12 @@ pass:
   # ssh_key_path: '/path/to/sshkey'
 
 user:
-    name: mattias
+    name: ddavid
     uid: 1000
     non_unique: yes
-    group: mattias
+    group: ddavid
     shell: /bin/bash
-    email: mattiasgiese@posteo.net
+    email: nothing@example.com
     log:
         dir: log
         rotate: 8
@@ -36,8 +36,13 @@ user:
 hostname: amarula
 
 dotfiles:
-    url: git@github.com:mattiasgiese/dotfiles.git
+    url: git@github.com:dadav/dotfiles.git
     destination: git/dotfiles
+    rcup_flags: -fx README.md
+
+scripts:
+    url: git@github.com:dadav/scripts.git
+    destination: git/scripts
     rcup_flags: -fx README.md
 
 aur:
@@ -45,8 +50,6 @@ aur:
     packages:
         - downgrade
         - miller
-        - myrepos
-        - ctmg
 
 ssh:
     port: 22
@@ -69,14 +72,11 @@ network:
     conn_check:
         interval: 0
     trusted_uuid:
-        - b21284e6-01af-492f-8bea-45a69ef22a23
-        - 4ddd6988-aad1-4927-b650-ea7d24e0138b
-        - f9b3c62c-2d9f-450a-ac9b-528ba4c85ded
-        - b94375d1-70f8-424f-a6d7-dc52d0ab7288
-        - f74f2bd5-8748-4e1e-98f9-dae2dd44b916
-        - faeec88c-79ec-4840-ab25-ea356af8a81b
+      - 1ab4613e-e62e-404b-a982-55c3bf379a33
+      - 2125d439-1a38-4ba8-ba65-52f128b7a13f
 
 editors:
+    - atom
     - neovim
     - python-neovim
     - python2-neovim
@@ -88,20 +88,15 @@ video_drivers:
 base_packages:
     - base-devel
     - perl
-    - atop
-    - mosh
     - tmux
     - git
-    - subversion
     - rsync
-    - glances
     - dateutils
     - coreutils
     - moreutils
     - most
     - reflector
     - bc
-    - ranger
     - strace
     - lsof
     - sysstat
@@ -109,7 +104,6 @@ base_packages:
     - arch-wiki-docs
     - python-keyring
     - python-secretstorage
-    - tig
     - dateutils
     - ruby
     - pv
@@ -119,6 +113,7 @@ base_packages:
     - screen
     - units
     - progress
+    - perf
 
 filesystem_packages:
     - dosfstools
@@ -237,6 +232,3 @@ himawaripy:
 docker_base_images:
   - alpine:3.6
   - busybox:latest
-  - centos:centos6
-  - centos:centos7
-  - ubuntu:16.04
