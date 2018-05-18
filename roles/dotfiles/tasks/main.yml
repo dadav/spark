@@ -1,14 +1,4 @@
 ---
-- name: Install rcm
-  aur:
-    name: rcm
-    user: "{{ user.name }}"
-  become: True
-  become_user: "{{ user.name }}"
-  when: dotfiles is defined
-  tags:
-    - aur
-
 - name: Define short hand for SSH key
   set_fact:
     df_key: "/home/{{ user.name }}/.ssh/dotfiles_ssh_key"
@@ -26,7 +16,7 @@
   copy:
     src: "{{ dotfiles_ssh_key }}"
     dest: "{{ df_key }}"
-  mode: '0600'
+    mode: '0600'
   become: True
   become_user: "{{ user.name }}"
   when: dotfiles_ssh_key is defined
@@ -38,14 +28,17 @@
     accept_hostkey: yes
     update: no
     key_file: "{{ df_key|default(omit) }}"
+    bare: yes
   when: dotfiles is defined
   become: yes
   become_user: "{{ user.name }}"
+  register: update
 
-- name: Install user dotfiles
-  command: rcup -d /home/{{ user.name}}/{{ dotfiles.destination}} {{ dotfiles.rcup_flags }}
-  when: dotfiles is defined
+- name: Apply dotfiles
+  shell: '/usr/bin/git --git-dir=$HOME/git/dotfiles --work-tree=$HOME checkout'
   become: yes
   become_user: "{{ user.name }}"
+  when: update.changed
 
 - include_tasks: 'nvim.yml'
+  when: update.changed

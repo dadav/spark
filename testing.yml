@@ -24,14 +24,12 @@
     - { role: udisks, tags: ['udisks'] }
     - { role: spell, tags: ['spell'] }
     - { role: browsers, tags: ['browsers'] }
-    - { role: yubikey, tags: ['yubikey'] }
     - { role: media, tags: ['media'] }
     - { role: mpv, tags: ['mpv'] }
     - { role: pianobar, tags: ['pianobar'] }
     - { role: laptop, tags: ['laptop'] }
     - { role: thinkpad, tags: ['thinkpad'], when: "'ThinkPad' in ansible_product_version" }
     - { role: screensaver, tags: ['screensaver'] }
-    - { role: weechat, tags: ['weechat'] }
     - { role: taskwarrior, tags: ['taskwarrior'] }
     #    - { role: ledger, tags: ['ledger'] }
     - { role: mail, tags: ['mail'] }

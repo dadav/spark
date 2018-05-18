@@ -1,0 +1,5 @@
+---
+- name: apply dotfiles
+  shell: '/usr/bin/git --git-dir=$HOME/git/dotfiles --work-tree=$HOME'
+  become: True
+  become_user: "{{ user.name }}"
