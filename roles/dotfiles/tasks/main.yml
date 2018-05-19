@@ -35,7 +35,7 @@
   register: configs
 
 - name: Apply dotfiles
-  shell: '/usr/bin/git --git-dir=$HOME/git/dotfiles --work-tree=$HOME checkout'
+  shell: '/usr/bin/git --git-dir=$HOME/git/dotfiles --work-tree=$HOME checkout -f'
   become: yes
   become_user: "{{ user.name }}"
   when: configs is changed
