@@ -32,13 +32,12 @@
   when: dotfiles is defined
   become: yes
   become_user: "{{ user.name }}"
-  register: update
+  register: configs
 
 - name: Apply dotfiles
   shell: '/usr/bin/git --git-dir=$HOME/git/dotfiles --work-tree=$HOME checkout'
   become: yes
   become_user: "{{ user.name }}"
-  when: update.changed
+  when: configs is changed
 
 - include_tasks: 'nvim.yml'
-  when: update.changed

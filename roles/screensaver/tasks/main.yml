@@ -3,7 +3,7 @@
   pacman: name=xautolock state=present
 
 - name: Install physlock
-  aur: 
+  aur:
     name: physlock
     user: "{{ user.name }}"
   become: True

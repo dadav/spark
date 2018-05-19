@@ -5,6 +5,15 @@
 root ALL=(ALL) ALL
 
 %wheel ALL=(ALL) ALL
+
+# Vagrant
+{% if vagrant_testing == True %}
+{{ user.name }} ALL=(ALL) NOPASSWD:/usr/bin/pacman*
+{% endif %}
+
 {% for entry in passwordless_sudo %}
 %wheel ALL=(ALL) NOPASSWD:{{ entry }}
 {% endfor %}
+
+# This is not a comment
+#includedir /etc/sudoers.d

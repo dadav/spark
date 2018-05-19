@@ -1,7 +1,7 @@
 #!/bin/sh
 
 hash light 2> /dev/null
-if [ $? -eq 0 ]; then
+if which light 2> /dev/null; then
     BRIGHTNESS=true
 fi
 

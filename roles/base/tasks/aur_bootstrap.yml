@@ -27,7 +27,7 @@
   register: version_check_result
 
 - name: AUR | {{ pkg_name }} | download tarball
-  when: version_check_result.changed
+  when: version_check_result is changed
   connection: local
   become: False
   get_url: >
@@ -36,7 +36,7 @@
   register: aur_tarball
 
 - name: AUR | {{ pkg_name }} | upload tarball to host and extract it
-  when: version_check_result.changed
+  when: version_check_result is changed
   become: yes
   become_user: "{{ user.name }}"
   unarchive: >
@@ -46,7 +46,7 @@
 
 # We need to make sure to import gpg keys used with PKGBUILD signing
 - name: AUR | {{ pkg_name }} | importing GPG keys of package maintainer
-  shell: "gpg --keyserver {{ base_gpg_keyserver }} --recv-keys 0x{{ gpg_key }}"
+  shell: "gpg {{ ('--keyserver' + base_gpg_keyserver) if base_gpg_keyserver else '' }} --recv-keys 0x{{ gpg_key }}"
   become: yes
   become_user: "{{ user.name }}"
   when: gpg_key != ''
@@ -54,14 +54,14 @@
 
 # This will break if run as root. Set user to use with makepkg with 'makepkg_user' var
 - name: AUR | {{ pkg_name }} | build package, including missing dependencies
-  when: extracted_pkg | changed
+  when: extracted_pkg is changed
   become: yes
   become_user: "{{ user.name }}"
-  shell: ". /etc/profile; cd /tmp/{{ pkg_name }};makepkg --noconfirm --noprogressbar -mfs"
+  shell: ". /etc/profile;makepkg --noconfirm --noprogressbar -mfs chdir=/tmp/{{ pkg_name }}"
   register: aur_makepkg_result
 
 - name: AUR | {{ pkg_name }} | install newly-built aur package with pacman
-  when: aur_makepkg_result | changed
+  when: aur_makepkg_result is changed
   shell: >
     pacman --noconfirm --noprogressbar --needed -U *.pkg.tar.xz
     chdir=/tmp/{{ pkg_name }}

@@ -1,2 +1,3 @@
 ---
-base_gpg_keyserver: 'pgp.mit.edu'
+base_gpg_keyserver: ''
+# base_gpg_keyserver: 'pgp.mit.edu'

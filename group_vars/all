@@ -103,7 +103,6 @@ base_packages:
     - arch-wiki-docs
     - python-keyring
     - python-secretstorage
-    - dateutils
     - ruby
     - pv
     - jq
@@ -131,6 +130,7 @@ browser_choices:
 
 passwordless_sudo:
     - /usr/bin/openvpn*
+    - /usr/bin/makepkg*
 
 tarsnapper:
   deltas: 1h 1d 7d 30d 365d
