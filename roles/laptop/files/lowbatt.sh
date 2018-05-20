@@ -3,6 +3,7 @@
 CRITICAL=5
 LOW=10
 VERBOSE=false
+MSGTIMEOUT=10000
 
 usage() {
   echo "Usage: lowbatt [OPTION...]
@@ -23,9 +24,9 @@ low() {
   message="Total capacity is at $capacity. We need more power, Scotty!"
   systemd-cat -t 'lowbatt' -p warning echo "$message"
   if [ -n "$NOTIFYUSER" ]; then
-      su "$NOTIFYUSER" -c "notify-send --urgency=critical \"Low Battery\" \"$message\""
+      su "$NOTIFYUSER" -c "notify-send -t $MSGTIMEOUT --urgency=critical \"Low Battery\" \"$message\""
   else
-      notify-send --urgency=critical "Low Battery" "$message"
+      notify-send -t "$MSGTIMEOUT" --urgency=critical "Low Battery" "$message"
   fi
   wall "Battery is low. $message"
 }
