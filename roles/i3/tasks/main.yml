@@ -20,4 +20,4 @@
       - debug
 
 - include_tasks: utils.yml
-- include_tasks: rofi.yml
+#- include_tasks: rofi.yml

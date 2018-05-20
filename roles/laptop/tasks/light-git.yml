@@ -1,6 +1,6 @@
 ---
 - name: Install light-git
-  aur: 
+  aur:
     name: light-git
     user: "{{ user.name }}"
   become: True

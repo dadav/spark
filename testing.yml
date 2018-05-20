@@ -3,22 +3,23 @@
   become: yes
   roles:
     - { role: base, tags: ['base'] }
+    - { role: japanesify, tags: ['japanese'] }
       #    - { role: gnupg, tags: ['gnupg'] }
       #    - { role: cron, tags: ['cron'] }
     - { role: microcode, tags: ['microcode'], when: "'GenuineIntel' in ansible_processor" }
       #    - { role: ssh, tags: ['ssh'] }
+    - { role: editors, tags: ['editors'] }
     - { role: dotfiles, tags: ['dotfiles'] }
       #    - { role: ssd, tags: ['ssd'] }
       #    - { role: fonts, tags: ['fonts'] }
       #    - { role: x, tags: ['x'] }
-      #    - { role: i3, tags: ['i3'] }
+    - { role: i3, tags: ['i3'] }
       #    - { role: pass, tags: ['pass'] }
       #    - { role: nettools, tags: ['nettools'] }
       #    - { role: ntp, tags: ['ntp'] }
       #    - { role: firejail, tags: ['firejail'] }
       #    - { role: tor, tags: ['tor'], when: "tor is defined" }
       #    - { role: unbound, tags: ['unbound'] }
-      #    - { role: editors, tags: ['editors'] }
       #    - { role: filesystems, tags: ['filesystems'] }
       #    - { role: archive, tags: ['archive'] }
       #    - { role: udisks, tags: ['udisks'] }
@@ -27,7 +28,7 @@
       #    - { role: media, tags: ['media'] }
       #    - { role: mpv, tags: ['mpv'] }
       #    - { role: pianobar, tags: ['pianobar'] }
-      #    - { role: laptop, tags: ['laptop'] }
+    - { role: laptop, tags: ['laptop'] }
       #    - { role: thinkpad, tags: ['thinkpad'], when: "'ThinkPad' in ansible_product_version" }
     - { role: screensaver, tags: ['screensaver'] }
     - { role: weechat, tags: ['weechat'] }

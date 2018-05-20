@@ -4,20 +4,7 @@
   with_items:
     - i3lock
     - i3blocks
+    - i3status
     - dunst
     - redshift
     - compton
-    - nitrogen
-    - slock
-    - python-i3-py
-
-- name: Additional aur packages
-  aur:
-    name: "{{ item }}"
-    user: "{{ user.name }}"
-  with_items:
-    - siji-git
-    - polybar-git
-  become: True
-  become_user: "{{ user.name }}"
-

@@ -45,6 +45,13 @@ scripts:
     destination: git/scripts
     rcup_flags: -fx README.md
 
+japanese:
+  fonts:
+    - otf-ipafont
+  packages:
+    - ibus
+    - ibus-anthy
+
 aur:
     dir: aur
     packages:

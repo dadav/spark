@@ -8,7 +8,7 @@ root ALL=(ALL) ALL
 
 # Vagrant
 {% if vagrant_testing == True %}
-{{ user.name }} ALL=(ALL) NOPASSWD:/usr/bin/pacman*
+{{ user.name }} ALL=(ALL) NOPASSWD,SETENV:/usr/bin/pacman*
 {% endif %}
 
 {% for entry in passwordless_sudo %}
