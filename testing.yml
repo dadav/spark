@@ -3,6 +3,7 @@
   become: yes
   roles:
     - { role: base, tags: ['base'] }
+    - { role: terminals, tags: ['terminal'] }
     - { role: japanesify, tags: ['japanese'] }
       #    - { role: gnupg, tags: ['gnupg'] }
       #    - { role: cron, tags: ['cron'] }
@@ -17,7 +18,7 @@
       #    - { role: pass, tags: ['pass'] }
       #    - { role: nettools, tags: ['nettools'] }
       #    - { role: ntp, tags: ['ntp'] }
-      #    - { role: firejail, tags: ['firejail'] }
+    - { role: firejail, tags: ['firejail'] }
       #    - { role: tor, tags: ['tor'], when: "tor is defined" }
       #    - { role: unbound, tags: ['unbound'] }
       #    - { role: filesystems, tags: ['filesystems'] }

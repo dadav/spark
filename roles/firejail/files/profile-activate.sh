@@ -11,10 +11,10 @@ fi
 # For every system profile, create a user profile if one does not already
 # exist.
 for path in "$SYSDIR"/*.profile; do
-    file=`basename $path`
+    file="$(basename "$path")"
     destination=$PROFILEDIR/$file
-    if [ ! -e $destination ]; then
+    if [ ! -e "$destination" ]; then
         echo "creating $destination"
-        echo "include $SYSDIR/$file" > $destination
+        echo "include $SYSDIR/$file" > "$destination"
     fi
 done

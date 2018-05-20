@@ -120,6 +120,12 @@ base_packages:
     - progress
     - perf
 
+terminals:
+  urxvt:
+    - rxvt-unicode
+    - rxvt-unicode-terminfo
+    - urxvt-perls
+
 filesystem_packages:
     - dosfstools
     - ntfs-3g
@@ -176,16 +182,8 @@ bluetooth:
 
 firejail:
     blacklist:
-        - ~/.calendars
-        - ~/.config/vdirsyncer
-        - ~/.contacts
         - ~/.keys
-        - ~/.mbsyncrc
-        - ~/.offlineimap
-        - ~/.offlineimaprc
         - ~/.password-store
-        - ~/.vdirsyncer
-        - ~/library/ledger
 
 cryptshot:
     - name: alta
