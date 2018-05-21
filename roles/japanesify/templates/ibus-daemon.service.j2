@@ -1,0 +1,13 @@
+[Unit]
+Description=IBus- Daemon Service
+Documentation=man:ibus-daemon(1)
+
+[Service]
+User={{ user.name }}
+Environment="DISPLAY=:0"
+ExecStart=/usr/bin/ibus-daemon --replace --xim
+ExecReload=/usr/bin/ibus restart
+ExecStop=/usr/bin/ibus exit
+
+[Install]
+WantedBy=multi-user.target

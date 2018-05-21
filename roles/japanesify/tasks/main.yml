@@ -9,6 +9,24 @@
 - name: Install packages
   pacman: name="{{ item }}" state=present
   with_items: "{{ japanese.packages }}"
+  tags:
+    - japanese
 
 - name: Locale config
   locale_gen: name="ja_JP.UTF-8" state=present
+  tags:
+    - japanese
+
+- name: Push Service
+  template: src=ibus-daemon.service.j2 dest=/etc/systemd/system/ibus-daemon.service
+  notify:
+    - reload systemd config
+  tags:
+    - japanese
+
+- name: Activate Service
+  service:
+    name: ibus-daemon.service
+    enabled: yes
+    state: started
+  when: japanese.service

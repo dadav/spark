@@ -51,6 +51,7 @@ japanese:
   packages:
     - ibus
     - ibus-anthy
+  service: True
 
 aur:
     dir: aur
