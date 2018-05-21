@@ -90,7 +90,7 @@ editors:
     - python2-neovim
 
 video_drivers:
-    - libva-intel-driver
+    - mesa
 
 base_packages:
     - base-devel

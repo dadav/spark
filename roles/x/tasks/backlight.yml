@@ -1,8 +1,0 @@
----
-- name: Install brightness control tool for intel cards
-  aur:
-    name: acpilight
-    user: "{{ user.name }}"
-  become: True
-  become_user: "{{ user.name }}"
-  when: "'GenuineIntel' in ansible_processor"

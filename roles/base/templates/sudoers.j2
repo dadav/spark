@@ -12,7 +12,7 @@ root ALL=(ALL) ALL
 {% endif %}
 
 {% for entry in passwordless_sudo %}
-%wheel ALL=(ALL) NOPASSWD:{{ entry }}
+%wheel ALL=(ALL) NOPASSWD,SETENV:{{ entry }}
 {% endfor %}
 
 # This is not a comment

@@ -1,6 +1,6 @@
 ---
 - name: Install autorandr
-  aur: 
+  aur:
     name: autorandr-git
     user: "{{ user.name }}"
   become: True

@@ -1,7 +1,0 @@
----
-- name: Install misc X.org related utilities
-  package:
-    name: "{{ item }}"
-    state: installed
-  with_items:
-    - xorg-xkill

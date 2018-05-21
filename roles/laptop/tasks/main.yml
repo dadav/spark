@@ -5,6 +5,9 @@
 - name: Copy touchpad configuration file
   copy: src=30-touchpad.conf dest=/etc/X11/xorg.conf.d/30-touchpad.conf
 
+- name: Copy touchpad configuration file
+  copy: src=00-keyboard.conf dest=/etc/X11/xorg.conf.d/00-keyboard.conf
+
 - name: Push low battery warning script
   copy: src=lowbatt.sh dest=/usr/local/bin/lowbatt mode=0755
 
