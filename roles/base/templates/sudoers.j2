@@ -2,17 +2,19 @@
 ##
 ## User privilege specification
 ##
+Defaults setenv
+
 root ALL=(ALL) ALL
 
 %wheel ALL=(ALL) ALL
 
 # Vagrant
 {% if vagrant_testing == True %}
-{{ user.name }} ALL=(ALL) NOPASSWD,SETENV:/usr/bin/pacman*
+{{ user.name }} ALL=(ALL) NOPASSWD:/usr/bin/pacman*
 {% endif %}
 
 {% for entry in passwordless_sudo %}
-%wheel ALL=(ALL) NOPASSWD,SETENV:{{ entry }}
+%wheel ALL=(ALL) NOPASSWD:{{ entry }}
 {% endfor %}
 
 # This is not a comment

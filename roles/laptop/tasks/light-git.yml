@@ -3,8 +3,6 @@
   aur:
     name: light-git
     user: "{{ user.name }}"
-  become: True
-  become_user: "{{ user.name }}"
   tags:
     - aur
     - light-git
