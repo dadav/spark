@@ -18,7 +18,7 @@ pacman -S --noconfirm --needed python
 #pacman-key -u --refresh-keys
 SCRIPT
   config.vm.provision "ansible" do |ansible|
-    ansible.tags = "japanese"
+    ansible.tags = "ssd"
     ansible.playbook = "testing.yml"
     ansible.config_file = "ansible.cfg"
 #    ansible.verbose = "vvv"

@@ -8,10 +8,10 @@
       #    - { role: gnupg, tags: ['gnupg'] }
       #    - { role: cron, tags: ['cron'] }
     - { role: microcode, tags: ['microcode'], when: "'GenuineIntel' in ansible_processor" }
-      #    - { role: ssh, tags: ['ssh'] }
+    - { role: ssh, tags: ['ssh'] }
     - { role: editors, tags: ['editors'] }
     - { role: dotfiles, tags: ['dotfiles'] }
-      #    - { role: ssd, tags: ['ssd'] }
+    - { role: ssd, tags: ['ssd'] }
       #    - { role: fonts, tags: ['fonts'] }
       #    - { role: x, tags: ['x'] }
     - { role: i3, tags: ['i3'] }

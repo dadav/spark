@@ -1,4 +1,7 @@
 ---
+- name: Copy udev rule
+  copy: src=60-ssd.rules dest=/etc/udev/rules.d/60-ssd.rules
+
 - name: Install hdparm
   pacman: name=hdparm state=present
 
