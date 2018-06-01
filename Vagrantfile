@@ -18,7 +18,7 @@ pacman -S --noconfirm --needed python
 #pacman-key -u --refresh-keys
 SCRIPT
   config.vm.provision "ansible" do |ansible|
-    # ansible.tags = "x"
+    ansible.tags = "base,scripts"
     ansible.playbook = "testing.yml"
     ansible.config_file = "ansible.cfg"
 #    ansible.verbose = "vvv"
@@ -26,7 +26,8 @@ SCRIPT
     # ansible.ask_become_pass = true
     ansible.extra_vars = {
       vagrant_testing: true,
-      dotfiles_ssh_key: '/home/ddavid/.ssh/github_read'
+      dotfiles_ssh_key: '/home/ddavid/.ssh/github_read',
+      scripts_ssh_key: '/home/ddavid/.ssh/github_read',
     }
   end
 end

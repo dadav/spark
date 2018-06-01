@@ -1,0 +1,41 @@
+---
+- name: Define short hand for SSH key
+  set_fact:
+    df_key: "/home/{{ user.name }}/.ssh/scripts_ssh_key"
+  when: scripts_ssh_key is defined
+
+- name: Deploy SSH key for scripts repo
+  file:
+    path: "/home/{{ user.name }}/.ssh"
+    state: directory
+    mode: '0700'
+    owner: "{{ user.name }}"
+  when: scripts_ssh_key is defined
+
+- name: Deploy SSH key for scripts repo
+  copy:
+    src: "{{ scripts_ssh_key }}"
+    dest: "{{ df_key }}"
+    mode: '0600'
+  become: True
+  become_user: "{{ user.name }}"
+  when: scripts_ssh_key is defined
+
+- name: Clone user scripts
+  git:
+    repo: "{{ scripts.url }}"
+    dest: "/home/{{ user.name }}/{{ scripts.destination }}"
+    accept_hostkey: yes
+    update: no
+    key_file: "{{ df_key|default(omit) }}"
+    bare: yes
+  when: scripts is defined
+  become: yes
+  become_user: "{{ user.name }}"
+  register: scripts
+
+- name: Apply scripts
+  shell: '/usr/bin/git --git-dir=$HOME/git/scripts --work-tree=$HOME checkout -f'
+  become: yes
+  become_user: "{{ user.name }}"
+  when: scripts is changed

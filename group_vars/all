@@ -38,12 +38,10 @@ hostname: lapt430
 dotfiles:
     url: git@github.com:dadav/dotfiles.git
     destination: git/dotfiles
-    rcup_flags: -fx README.md
 
 scripts:
     url: git@github.com:dadav/scripts.git
     destination: git/scripts
-    rcup_flags: -fx README.md
 
 japanese:
   fonts:
