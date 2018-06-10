@@ -1,6 +1,6 @@
 ---
 - name: Install magic-wormhole
-  aur: 
+  aur:
     name: "{{ item }}"
     user: "{{ user.name }}"
   become: True

@@ -1,18 +1,25 @@
 ---
-- include: beets.yml
+- include: ffmpeg.yml
+#- include: beets.yml
 - include: abcde.yml
 - include: xfburn.yml
 - include: imagemagick.yml
-- include: inkscape.yml
+#- include: inkscape.yml
 - include: gimp.yml
-- include: gthumb.yml
+# - include: gthumb.yml
 - include: feh.yml
-- include: imv.yml
-- include: mcomix.yml
-- include: teiler.yml
-- include: flac2all.yml
-- include: darktable.yml
+# - include: imv.yml
+# - include: mcomix.yml
+# - include: teiler.yml
+# - include: flac2all.yml
+# - include: darktable.yml
 - include: qcode.yml
+
+- name: Install music players
+  pacman: name={{ item }} state=present
+  with_items:
+    - mpg123
+    - cmus
 
 - name: Install misc media codecs and helpers
   pacman: name={{ item }} state=present
@@ -25,30 +32,30 @@
     - perl-image-exiftool
     - opus-tools
 
-- name: Install Metadata Anonymisation Toolkit and dependencies
-  aur: 
-    name: "{{ item }}"
-    user: "{{ user.name }}"
-  become: True
-  become_user: "{{ user.name }}"
-  with_items:
-    - hachoir-core
-    - hachoir-parser
-    - mat
-  tags:
-    - aur
+# - name: Install Metadata Anonymisation Toolkit and dependencies
+#   aur:
+#     name: "{{ item }}"
+#     user: "{{ user.name }}"
+#   become: True
+#   become_user: "{{ user.name }}"
+#   with_items:
+#     - hachoir-core
+#     - hachoir-parser
+#     - mat
+#   tags:
+#     - aur
 
 - name: Install youtube-dl
   package:
     name: youtube-dl
     state: present
 
-- name: Install clementine
-  package:
-    name: clementine
-    state: present
+# - name: Install clementine
+#   package:
+#     name: clementine
+#     state: present
 
-- name: Install playerctl
-  package:
-    name: playerctl
-    state: present
+# - name: Install playerctl
+#   package:
+#     name: playerctl
+#     state: present

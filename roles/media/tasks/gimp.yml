@@ -1,8 +1,8 @@
 ---
-- name: Install poppler-glib
-  pacman: name=poppler-glib state=present
-  tags:
-    - gimp
+# - name: Install poppler-glib
+#   pacman: name=poppler-glib state=present
+#   tags:
+#     - gimp
 
 - name: Install GIMP
   pacman: name={{ item }} state=present

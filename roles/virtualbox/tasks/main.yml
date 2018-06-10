@@ -10,7 +10,7 @@
     - linux-headers
 
 - name: Install VirtualBox extensions
-  aur: 
+  aur:
     name: virtualbox-ext-oracle
     user: "{{ user.name }}"
   become: True

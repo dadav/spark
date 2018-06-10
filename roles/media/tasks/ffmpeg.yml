@@ -1,0 +1,12 @@
+---
+- name: Install ffmpeg
+  pacman: name=ffmpeg state=present
+
+- name: Install ffmpeg-normalize
+  pip: name=ffmpeg-normalize
+    virtualenv=/usr/local/env/ffmpeg-normalize
+
+- name: Link mapboxcli to bin
+  file: src=/usr/local/env/ffmpeg-normalize/bin/ffmpeg-normalize
+    dest=/usr/local/bin/ffmpeg-normalize
+    state=link

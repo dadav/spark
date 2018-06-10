@@ -8,7 +8,7 @@
     - refresh holidays
 
 - name: Install taskopen
-  aur: 
+  aur:
     name: taskopen
     user: "{{ user.name }}"
   become: True

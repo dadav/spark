@@ -6,7 +6,7 @@
     - borg
 
 - name: Install borgmatic
-  aur: 
+  aur:
     name: borgmatic
     user: "{{ user.name }}"
   become: True
