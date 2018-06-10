@@ -17,23 +17,11 @@
 - name: Install netcat
   pacman: name=gnu-netcat state=present
 
-- name: Install lftp
-  pacman: name=lftp state=present
-
 - name: Install nmap
   pacman: name=nmap state=present
 
 - name: Install tcpdump
   pacman: name=tcpdump state=present
-
-- name: Install sshuttle
-  pacman: name=sshuttle state=present
-
-- name: Install wireshark
-  pacman: name=wireshark-qt state=present
-
-- name: Add user to wireshark group
-  user: name={{ user.name }} groups=wireshark append=yes
 
 - name: Install socat
   pacman: name=socat state=present
@@ -43,11 +31,3 @@
 
 - name: Install speedtest-cli
   pacman: name=speedtest-cli state=present
-
-- name: Install wireguard an tools
-  package:
-    name: "{{ item }}"
-    state: installed
-  with_items:
-    - wireguard-tools
-    - wireguard-dkms

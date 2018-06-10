@@ -17,7 +17,7 @@
     - { role: x, tags: ['x'] }
     - { role: i3, tags: ['i3'] }
       #    - { role: pass, tags: ['pass'] }
-      #    - { role: nettools, tags: ['nettools'] }
+    - { role: nettools, tags: ['nettools'] }
       #    - { role: ntp, tags: ['ntp'] }
     - { role: firejail, tags: ['firejail'] }
       #    - { role: tor, tags: ['tor'], when: "tor is defined" }
@@ -28,10 +28,10 @@
       #    - { role: spell, tags: ['spell'] }
       #    - { role: browsers, tags: ['browsers'] }
       #    - { role: media, tags: ['media'] }
-      #    - { role: mpv, tags: ['mpv'] }
+    - { role: mpv, tags: ['mpv'] }
       #    - { role: pianobar, tags: ['pianobar'] }
     - { role: laptop, tags: ['laptop'] }
-      #    - { role: thinkpad, tags: ['thinkpad'], when: "'ThinkPad' in ansible_product_version" }
+    - { role: thinkpad, tags: ['thinkpad'], when: "'ThinkPad' in ansible_product_version" }
     - { role: screensaver, tags: ['screensaver'] }
     - { role: weechat, tags: ['weechat'] }
       #    - { role: taskwarrior, tags: ['taskwarrior'] }
@@ -52,7 +52,7 @@
       #    - { role: wttr, tags: ['wttr'] }
       #    - { role: hostsctl, tags: ['hostsctl'], when: "hostsctl is defined" }
       #    - { role: kiwix, tags: ['kiwix'] }
-      #    - { role: nerdpr0n, tags: ['nerdpr0n'] }
+    - { role: nerdpr0n, tags: ['nerdpr0n'] }
       #    - { role: gajim, tags: ['gajim'] }
       #    - { role: logind, tags: ['logind'] }
   vars:

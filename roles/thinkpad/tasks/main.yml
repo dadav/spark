@@ -10,7 +10,7 @@
     - battery
 
 - name: Install tpacpi-bat
-  aur: 
+  aur:
     name: tpacpi-bat
     user: "{{ user.name }}"
     # become: True
