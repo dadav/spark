@@ -1,6 +1,6 @@
 ---
 - name: Install teiler and dependencies
-  aur: 
+  aur:
     name: "{{ item }}"
     user: "{{ user.name }}"
   become: True

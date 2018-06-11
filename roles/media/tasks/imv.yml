@@ -1,6 +1,6 @@
 ---
 - name: Install imv
-  aur: 
+  aur:
     name: imv
     user: "{{ user.name }}"
   become: True
