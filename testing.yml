@@ -18,7 +18,7 @@
     - { role: i3, tags: ['i3'] }
       #    - { role: pass, tags: ['pass'] }
     - { role: nettools, tags: ['nettools'] }
-      #    - { role: ntp, tags: ['ntp'] }
+    - { role: ntp, tags: ['ntp'] }
     - { role: firejail, tags: ['firejail'] }
       #    - { role: tor, tags: ['tor'], when: "tor is defined" }
       #    - { role: unbound, tags: ['unbound'] }
@@ -39,7 +39,7 @@
       #    - { role: mail, tags: ['mail'] }
       #    - { role: cups, tags: ['cups'] }
       #    - { role: office, tags: ['office'] }
-      #    - { role: redshift, tags: ['redshift'] }
+      - { role: redshift, tags: ['redshift'] }
       #    - { role: virtualbox, tags: ['virtualbox'] }
       #    - { role: hashicorp, tags: ['hashicorp'] }
       #    - { role: sound, tags: ['sound'] }
