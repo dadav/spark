@@ -78,3 +78,7 @@
   vars_prompt:
     - name: user_password
       prompt: "Enter desired user password"
+  environment:
+    http_proxy: ''
+    https_proxy: ''
+    no_proxy: ''

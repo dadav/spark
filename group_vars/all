@@ -36,11 +36,11 @@ user:
 hostname: lapt430
 
 dotfiles:
-    url: git@github.com:dadav/dotfiles.git
+    url: https://github.com/dadav/dotfiles.git
     destination: git/dotfiles
 
 scripts:
-    url: git@github.com:dadav/scripts.git
+    url: https://github.com/dadav/scripts.git
     destination: git/scripts
 
 japanese:

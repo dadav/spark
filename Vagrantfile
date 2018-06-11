@@ -26,8 +26,8 @@ SCRIPT
     # ansible.ask_become_pass = true
     ansible.extra_vars = {
       vagrant_testing: true,
-      dotfiles_ssh_key: '/home/ddavid/.ssh/github_read',
-      scripts_ssh_key: '/home/ddavid/.ssh/github_read',
+      #dotfiles_ssh_key: '/home/ddavid/.ssh/github_read',
+      #scripts_ssh_key: '/home/ddavid/.ssh/github_read',
     }
   end
 end
