@@ -18,10 +18,10 @@ pacman -S --noconfirm --needed python
 #pacman-key -u --refresh-keys
 SCRIPT
   config.vm.provision "ansible" do |ansible|
-    ansible.tags = "base,scripts"
+    # ansible.tags = "base,scripts"
     ansible.playbook = "testing.yml"
     ansible.config_file = "ansible.cfg"
-#    ansible.verbose = "vvv"
+    # ansible.verbose = "vvv"
     ansible.become_user = 'root'
     # ansible.ask_become_pass = true
     ansible.extra_vars = {
