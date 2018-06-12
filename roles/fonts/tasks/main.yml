@@ -62,5 +62,6 @@
       - ttf-heuristica
       - ttf-symbola
       - nerd-fonts-complete
+  ignore_errors: True
   tags:
     - aur
