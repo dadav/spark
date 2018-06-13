@@ -124,6 +124,7 @@ terminals:
     - rxvt-unicode
     - rxvt-unicode-terminfo
     - urxvt-perls
+    - urxvt-resize-font-git
 
 filesystem_packages:
     - dosfstools
