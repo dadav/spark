@@ -34,7 +34,6 @@
       - noto-fonts
       - ttf-dejavu
       - ttf-liberation
-      - ttf-symbola
       - gsfonts
       - tex-gyre-fonts
       - ttf-droid
@@ -61,6 +60,8 @@
       - ttf-caladea
       - ttf-courier-prime
       - ttf-heuristica
+      - ttf-symbola
       - nerd-fonts-complete
+  ignore_errors: True
   tags:
     - aur
