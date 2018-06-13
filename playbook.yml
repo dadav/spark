@@ -31,7 +31,7 @@
     # - { role: archive, tags: ['archive'] }
     # - { role: udisks, tags: ['udisks'] }
     # - { role: spell, tags: ['spell'] }
-    # - { role: browsers, tags: ['browsers'] }
+    - { role: browsers, tags: ['browsers'] }
     # - { role: yubikey, tags: ['yubikey'] }
     - { role: media, tags: ['media'] }
     # - { role: mpd, tags: ['mpd'] }
