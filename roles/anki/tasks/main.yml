@@ -1,0 +1,22 @@
+---
+- name: Install anki
+  pacman: name=anki state=present
+
+- name: Jail anki
+  file: src=/usr/bin/firejail
+        dest=/usr/local/bin/anki
+        state=link
+  tags:
+    - firejail
+
+- name: Push anki firejail profile
+  copy: src=firejail/anki.profile dest=/usr/local/etc/firejail/anki.profile
+  notify:
+    - activate firejail profiles
+  tags:
+    - firejail
+
+- name: Downloads Addons
+  git:
+    repo: https://github.com/dadav/fix_aedict.git
+    dest: /home/{{ user.name }}/.local/share/Anki2/addon21/
