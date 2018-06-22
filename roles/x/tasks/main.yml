@@ -12,6 +12,7 @@
     - xorg-sessreg
     - xorg-xinit
     - xorg-xprop
+    - xautomation
 
 - name: Install video driver(s)
   package:
@@ -27,3 +28,4 @@
 
 - include_tasks: unclutter.yml
 - include_tasks: autorandr.yml
+- include_tasks: xdg.yml
