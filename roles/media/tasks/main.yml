@@ -36,8 +36,6 @@
 #   aur:
 #     name: "{{ item }}"
 #     user: "{{ user.name }}"
-#   become: True
-#   become_user: "{{ user.name }}"
 #   with_items:
 #     - hachoir-core
 #     - hachoir-parser
@@ -50,12 +48,12 @@
     name: youtube-dl
     state: present
 
-# - name: Install clementine
-#   package:
-#     name: clementine
-#     state: present
+- name: Install clementine
+  package:
+    name: clementine
+    state: present
 
-# - name: Install playerctl
-#   package:
-#     name: playerctl
-#     state: present
+- name: Install playerctl
+  package:
+    name: playerctl
+    state: present
