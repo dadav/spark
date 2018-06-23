@@ -4,3 +4,12 @@
   with_dict: "{{ terminals }}"
   tag:
     - terminals
+
+- name: Install urxvt-font-size-git
+  aur:
+    name: "{{ item }}"
+    user: "{{ user.name }}"
+  with_items:
+    - urxvt-font-size-git
+  tags:
+    - aur
