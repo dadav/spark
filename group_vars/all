@@ -132,11 +132,7 @@ filesystem_packages:
 
 browser_choices:
     - firefox -P default
-    - firefox -P work
     - firewarden chromium
-    - play
-    - qcode
-    - "| xclip -selection c"
     - chromium
     - qutebrowser
 

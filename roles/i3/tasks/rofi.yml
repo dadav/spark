@@ -8,8 +8,6 @@
   aur:
     name: "{{ item }}"
     user: "{{ user.name }}"
-  become: True
-  become_user: "{{ user.name }}"
   with_items:
     - rofi-pass
     - rofi-dmenu

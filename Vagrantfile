@@ -18,7 +18,11 @@ pacman -S --noconfirm --needed python
 #pacman-key -u --refresh-keys
 SCRIPT
   config.vm.provision "ansible" do |ansible|
+<<<<<<< HEAD
     # ansible.tags = "base,firejail,anki"
+=======
+    # ansible.tags = "nerdpr0n"
+>>>>>>> d6d90231a21d9338d66af8c5161f99541b18d623
     ansible.playbook = "testing.yml"
     ansible.config_file = "ansible.cfg"
     # ansible.verbose = "vvv"

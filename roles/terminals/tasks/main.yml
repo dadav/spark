@@ -5,12 +5,11 @@
   tag:
     - terminals
 
-- name: Install Aur packages
+- name: Install urxvt-font-size-git
   aur:
     name: "{{ item }}"
     user: "{{ user.name }}"
-  become: True
   with_items:
-    - urxvt-resize-font-git
+    - urxvt-font-size-git
   tags:
     - aur

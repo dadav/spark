@@ -20,3 +20,5 @@
   git:
     repo: https://github.com/dadav/fix_aedict.git
     dest: /home/{{ user.name }}/.local/share/Anki2/addon21/
+  become: True
+  become_user: "{{ user.name }}"
