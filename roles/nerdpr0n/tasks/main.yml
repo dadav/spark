@@ -9,5 +9,3 @@
   aur:
     name: toilet
     user: "{{ user.name }}"
-  become: True
-  become_user: "{{ user.name }}"
