@@ -13,8 +13,6 @@
   aur:
     name: virtualbox-ext-oracle
     user: "{{ user.name }}"
-  become: True
-  become_user: "{{ user.name }}"
   tags:
     - aur
 

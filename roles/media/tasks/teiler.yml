@@ -1,4 +1,7 @@
 ---
+- name: Install missing deps
+  pacman: name=qt5-x11extras state=present
+
 - name: Install teiler and dependencies
   aur:
     name: "{{ item }}"
