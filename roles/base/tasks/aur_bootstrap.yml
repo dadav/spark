@@ -49,7 +49,7 @@
   shell: "gpg {{ ('--keyserver' + base_gpg_keyserver) if base_gpg_keyserver else '' }} --recv-keys 0x{{ gpg_key }}"
   become: yes
   become_user: "{{ user.name }}"
-  async: 180
+  async: 300
   poll: 5
   when: gpg_key != ''
 

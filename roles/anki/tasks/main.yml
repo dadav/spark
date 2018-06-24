@@ -16,9 +16,18 @@
   tags:
     - firejail
 
-- name: Downloads Addons
+- name: Download addons from git
   git:
-    repo: https://github.com/dadav/fix_aedict.git
-    dest: /home/{{ user.name }}/.local/share/Anki2/addon21/
+    repo: "{{ item.value }}"
+    dest: "/home/{{ user.name }}/.local/share/Anki2/addons21/{{ item.key }}"
   become: True
   become_user: "{{ user.name }}"
+  with_dict: "{{ anki.addons.git }}"
+
+- name: Install anki addons
+  include_role:
+    name: anki
+    tasks_from: addon
+  vars:
+    addonid: "{{ item }}"
+  with_items: "{{ anki.addons.official }}"

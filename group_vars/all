@@ -1,6 +1,6 @@
 vagrant_testing: false
 
-autologin: False
+autologin: True
 autologin_tty: 'tty1'
 
 gtk_theme_packages:
@@ -42,6 +42,16 @@ dotfiles:
 scripts:
     url: https://github.com/dadav/scripts.git
     destination: git/scripts
+
+anki:
+  addons:
+    git:
+      review-heatmap: https://github.com/glutanimate/review-heatmap.git
+      fix_aedict: https://github.com/dadav/fix_aedict.git
+    official:
+      - 498789867  # Replay Button
+      - 1496166067 # Night mode
+      - 3918629684 # Japanese Support
 
 japanese:
   fonts:

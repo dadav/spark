@@ -6,6 +6,7 @@
     - { role: anki, tags: ['anki'] }
     - { role: terminals, tags: ['terminal'] }
     - { role: japanesify, tags: ['japanese'] }
+    - { role: autologin, tags: ['autologin'] }
     # - { role: gnupg, tags: ['gnupg'] }
     # - { role: cron, tags: ['cron'] }
     - { role: microcode, tags: ['microcode'], when: "'GenuineIntel' in ansible_processor" }

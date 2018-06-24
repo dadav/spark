@@ -1,0 +1,16 @@
+---
+- name: Ensure path is present
+  file:
+    path: "/home/{{ user.name }}/.local/share/Anki2/addons21/{{ addonid }}"
+    state: directory
+    recurse: True
+  become: True
+  become_user: "{{ user.name }}"
+
+- name: Download addon
+  get_url:
+    url: "https://ankiweb.net/shared/download/{{ addonid }}"
+    dest: "/home/{{ user.name }}/.local/share/Anki2/addons21/{{ addonid }}/__init__.py"
+    force: no
+  become: True
+  become_user: "{{ user.name }}"
