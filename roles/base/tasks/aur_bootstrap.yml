@@ -51,6 +51,8 @@
   become_user: "{{ user.name }}"
   retries: 5
   delay: 5
+  register: res
+  until: res.rc == 0
   when: gpg_key != ''
 
 # This will break if run as root. Set user to use with makepkg with 'makepkg_user' var

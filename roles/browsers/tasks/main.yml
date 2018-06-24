@@ -74,6 +74,8 @@
   become_user: "{{ user.name }}"
   retries: 5
   delay: 5
+  register: res
+  until: res.rc == 0
   with_items:
     - D1483FA6C3C07136
 
