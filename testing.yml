@@ -32,7 +32,7 @@
     # - { role: archive, tags: ['archive'] }
     # - { role: udisks, tags: ['udisks'] }
     # - { role: spell, tags: ['spell'] }
-    # - { role: browsers, tags: ['browsers'] }
+    - { role: browsers, tags: ['browsers'] }
     # - { role: yubikey, tags: ['yubikey'] }
     - { role: media, tags: ['media'] }
     # - { role: mpd, tags: ['mpd'] }
@@ -40,7 +40,6 @@
     # - { role: pianobar, tags: ['pianobar'] }
     - { role: laptop, tags: ['laptop'] }
     - { role: thinkpad, tags: ['thinkpad'], when: "'ThinkPad' in ansible_product_version" }
-    # - { role: macbook, tags: ['macbook'], when: "'MacBook' in ansible_product_name" }
     - { role: screensaver, tags: ['screensaver'] }
     # - { role: bitlbee, tags: ['bitlbee'] }
     - { role: weechat, tags: ['weechat'] }
@@ -74,7 +73,6 @@
     # - { role: bluetooth, tags: ['bluetooth'], when: "bluetooth is defined" }
     - { role: wttr, tags: ['wttr'] }
     # - { role: hostsctl, tags: ['hostsctl'], when: "hostsctl is defined" }
-    # - { role: himawaripy, tags: ['himawaripy'], when: "himawaripy is defined" }
     # - { role: kiwix, tags: ['kiwix'] }
   vars:
     user_password: 'foobar'
