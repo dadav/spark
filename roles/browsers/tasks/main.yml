@@ -68,12 +68,19 @@
   tags:
     - chromium
 
+- name: Import gpg key
+  shell: "gpg {{ ('--keyserver' + base_gpg_keyserver) if base_gpg_keyserver else '' }} --recv-keys 0x{{ item }}"
+  become: yes
+  become_user: "{{ user.name }}"
+  async: 180
+  poll: 5
+  with_items:
+    - D1483FA6C3C07136
+
 - name: Install tor-browser-en
   aur:
     name: tor-browser-en
     user: "{{ user.name }}"
-  become: True
-  become_user: "{{ user.name }}"
   tags:
     - tor-browser
     - aur
