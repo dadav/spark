@@ -72,8 +72,8 @@
   shell: "gpg {{ ('--keyserver' + base_gpg_keyserver) if base_gpg_keyserver else '' }} --recv-keys 0x{{ item }}"
   become: yes
   become_user: "{{ user.name }}"
-  async: 300
-  poll: 5
+  retries: 5
+  delay: 5
   with_items:
     - D1483FA6C3C07136
 
