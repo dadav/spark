@@ -7,9 +7,10 @@
 
 - name: Install borgmatic
   aur:
-    name: borgmatic
+    name: "{{ item }}"
     user: "{{ user.name }}"
-  become: True
-  become_user: "{{ user.name }}"
+  with_items:
+    - python-pykwalify
+    - borgmatic
   tags:
     - aur
