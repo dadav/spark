@@ -1,9 +1,7 @@
 ---
 - name: Install ledger
-  aur: 
+  aur:
     name: ledger
     user: "{{ user.name }}"
-  become: True
-  become_user: "{{ user.name }}"
   tags:
     - aur

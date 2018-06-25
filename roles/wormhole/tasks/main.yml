@@ -1,13 +1,18 @@
 ---
+- name: Install deps
+  pacman: name="{{ item }}" state=present
+  with_items:
+    - python-tqdm
+    - python-humanize
+
 - name: Install magic-wormhole
   aur:
     name: "{{ item }}"
     user: "{{ user.name }}"
   with_items:
+      - python-txtorcon
       - python-hkdf
       - python-spake2
-      - python-humanize
-      - python-tqdm
       - python-ipaddress
       - magic-wormhole
   tags:

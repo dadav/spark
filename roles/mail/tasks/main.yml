@@ -3,8 +3,6 @@
   aur:
     name: neomutt
     user: "{{ user.name }}"
-  become: True
-  become_user: "{{ user.name }}"
   tags:
     - aur
 
@@ -28,11 +26,9 @@
     - firejail
 
 - name: Install urlview
-  aur: 
+  aur:
     name: urlview
     user: "{{ user.name }}"
-  become: True
-  become_user: "{{ user.name }}"
   tags:
     - aur
 
