@@ -10,10 +10,10 @@
     name: "{{ item }}"
     user: "{{ user.name }}"
   with_items:
+      - python-ipaddress
       - python-txtorcon
       - python-hkdf
       - python-spake2
-      - python-ipaddress
       - magic-wormhole
   tags:
     - aur
