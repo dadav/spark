@@ -19,6 +19,7 @@
   pacman: name={{ item }} state=present
   with_items:
     - mpg123
+    - libmad
     - cmus
 
 - name: Install misc media codecs and helpers
