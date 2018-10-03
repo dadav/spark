@@ -4,8 +4,8 @@ ConditionACPower=false
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/lowbatt -u {{ user.name }}
-Environment=DISPLAY=:0
+#ExecStart=/usr/local/bin/lowbatt -u {{ user.name }}
+ExecStart=/usr/local/bin/lowbatt
 
 [Install]
 WantedBy=multi-user.target

@@ -11,17 +11,30 @@
 - name: Push low battery warning script
   copy: src=lowbatt.sh dest=/usr/local/bin/lowbatt mode=0755
 
+- name: Create systemd user path
+  file:
+    state: directory
+    path: "/home/{{ username }}/.config/systemd/user/"
+  become: yes
+  become_user: "{{ username }}"
+
 - name: Push low battery warning service file
-  template: src=lowbatt.service.j2 dest=/etc/systemd/system/lowbatt.service
+  template:
+    src=lowbatt.service.j2
+    dest="/home/{{ username }}/.config/systemd/user/lowbatt.service"
+  become: yes
+  become_user: "{{ username }}"
   notify:
-    - reload systemd config
+    - reload systemd userconfig
 
 - name: Push low battery timer file
   template:
     src: lowbatt.timer.j2
-    dest: /etc/systemd/system/lowbatt.timer
+    dest: "/home/{{ username }}/.config/systemd/user/lowbatt.timer"
+  become: yes
+  become_user: "{{ username }}"
   notify:
-    - reload systemd config
+    - reload systemd userconfig
     - restart lowbatt
 
 - name: Enable and start lowbatt timer
@@ -29,3 +42,6 @@
     name: lowbatt.timer
     enabled: yes
     state: started
+    user: yes
+  become: yes
+  become_user: "{{ username }}"
