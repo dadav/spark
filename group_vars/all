@@ -92,10 +92,29 @@ network:
       - 2125d439-1a38-4ba8-ba65-52f128b7a13f
 
 editors:
-    - atom
+    - code
     - neovim
     - python-neovim
     - python2-neovim
+
+code_extensions:           
+    - DavidAnson.vscode-markdownlint
+    - eamodio.gitlens
+    - formulahendry.auto-close-tag
+    - foxundermoon.shell-format
+    - hangxingliu.vscode-systemd-support
+    - joaompinto.asciidoctor-vscode
+    - jpogran.puppet-vscode
+    - LaurentTreguier.rpm-spec
+    - ms-python.python
+    - ms-vscode.Go
+    - PeterJausovec.vscode-docker
+    - redhat.java
+    - redhat.vscode-xml
+    - redhat.vscode-yaml   
+    - rogalmic.bash-debug
+    - timonwong.shellcheck
+    - vscoss.vscode-ansible
 
 video_drivers:
     - mesa
