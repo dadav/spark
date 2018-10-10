@@ -1,0 +1,20 @@
+---                                                                                                                                               
+- name: Install code extensions
+  shell: "code --install-extension {{ item }}"
+  become: yes
+  become_user: "{{ username }}"
+  with_items: "{{ code_extensions }}"
+
+- name: Jail code
+  file: src=/usr/bin/firejail
+        dest=/usr/local/bin/code
+        state=link
+  tags:
+    - firejail
+
+- name: Push code firejail profile
+  copy: src=firejail/code.profile dest=/usr/local/etc/firejail/code.profile
+  notify:
+    - activate firejail profiles
+  tags:
+    - firejail
