@@ -2,7 +2,7 @@
 - name: Install code extensions
   shell: "code --install-extension {{ item }}"
   become: yes
-  become_user: "{{ username }}"
+  become_user: "{{ user.name }}"
   with_items: "{{ code_extensions }}"
 
 - name: Jail code
