@@ -2,7 +2,7 @@
 - name: Install terminal packages
   pacman: name="{{ item.value }}" state=present
   with_dict: "{{ terminals }}"
-  tag:
+  tags:
     - terminals
 
 - name: Install urxvt-font-size-git
