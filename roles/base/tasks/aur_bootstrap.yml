@@ -46,7 +46,7 @@
 
 # We need to make sure to import gpg keys used with PKGBUILD signing
 - name: AUR | {{ pkg_name }} | importing GPG keys of package maintainer
-  shell: "gpg {{ ('--keyserver' + base_gpg_keyserver) if base_gpg_keyserver else '' }} --recv-keys 0x{{ gpg_key }}"
+  shell: "gpg --list-keys 0x{{ gpg_key }} || gpg {{ ('--keyserver' + base_gpg_keyserver) if base_gpg_keyserver else '' }} --recv-keys 0x{{ gpg_key }}"
   become: yes
   become_user: "{{ user.name }}"
   retries: 5
