@@ -1,7 +1,9 @@
 ---
 - name: Install Bash
-  pacman: name={{ item }} state=present
-  with_items:
+  pacman:
+    name: "{{ item }}"
+    state: present
+  loop:
     - bash
     - bash-completion
   tags:
