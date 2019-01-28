@@ -98,7 +98,7 @@ editors:
     - python-neovim
     - python2-neovim
 
-code_extensions:           
+code_extensions:
     - DavidAnson.vscode-markdownlint
     - eamodio.gitlens
     - formulahendry.auto-close-tag
@@ -112,7 +112,7 @@ code_extensions:
     - PeterJausovec.vscode-docker
     - redhat.java
     - redhat.vscode-xml
-    - redhat.vscode-yaml   
+    - redhat.vscode-yaml
     - rogalmic.bash-debug
     - timonwong.shellcheck
     - vscoss.vscode-ansible
@@ -148,6 +148,7 @@ base_packages:
     - units
     - progress
     - perf
+    - perl-rename
 
 terminals:
   urxvt:
@@ -163,7 +164,7 @@ filesystem_packages:
 browser_choices:
     - firefox -P default
     - firewarden chromium
-    - chromium
+    - chromium --disk-cache-dir=/tmp/chromium-cache
     - qutebrowser
 
 passwordless_sudo:

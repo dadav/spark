@@ -8,3 +8,13 @@
     - dunst
     - redshift
     - compton
+
+- name: Install polybar
+  aur:
+    name: "{{ item }}"
+    user: "{{ user.name }}"
+  with_items:
+    - polybar-git
+  tags:
+    - aur
+    - polybar

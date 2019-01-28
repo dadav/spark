@@ -62,6 +62,8 @@
       - ttf-heuristica
       - ttf-symbola
       - nerd-fonts-complete
+      - nerd-fonts-iosevka
+      - siji-git
   ignore_errors: True
   tags:
     - aur
