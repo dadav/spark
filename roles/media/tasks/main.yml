@@ -48,6 +48,11 @@
     name: youtube-dl
     state: present
 
+- name: Install aria2 used by youtube-dl
+  package:
+    name: aria2
+    state: present
+
 - name: Install clementine
   package:
     name: clementine
