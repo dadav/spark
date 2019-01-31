@@ -1,7 +1,6 @@
 ---
 - name: Install editors
-  pacman: name={{ item }} state=present
-  with_items: "{{ editors }}"
+  pacman: name={{ editors }} state=present
 
 - include: code.yml
   when: '"code" in editors'

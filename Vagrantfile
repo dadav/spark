@@ -15,8 +15,8 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<SCRIPT
 echo Installing python
 pacman -S --noconfirm --needed python
-pacman-key --init
-pacman-key -u --refresh-keys
+#pacman-key --init
+#pacman-key -u --refresh-keys
 SCRIPT
   config.vm.provision "ansible" do |ansible|
     # ansible.tags = "base,anki"
