@@ -8,3 +8,5 @@
     - bash-completion
   tags:
     - shell
+
+- include zsh.yml
