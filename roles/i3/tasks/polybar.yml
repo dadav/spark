@@ -1,0 +1,14 @@
+- name: Install mpd support for polybar
+  package:
+    name: libmpdclient
+    state: present
+  tags:
+    - polybar
+
+- name: Install polybar
+  aur:
+    name: "polybar-git"
+    user: "{{ user.name }}"
+  tags:
+    - aur
+    - polybar

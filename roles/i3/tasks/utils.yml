@@ -1,11 +1,3 @@
 - name: Install additional tools
   pacman:
     name: [ 'i3lock', 'i3blocks', 'i3status', 'dunst', 'redshift', 'compton' ]
-
-- name: Install polybar
-  aur:
-    name: "polybar-git"
-    user: "{{ user.name }}"
-  tags:
-    - aur
-    - polybar
