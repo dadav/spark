@@ -40,6 +40,16 @@
   tags:
     - chromium
 
+
+
+- name: Install widevine (netflix support)
+  aur:
+    name: chromium-widevine
+    user: "{{ user.name }}"
+  tags:
+    - chromium
+    - aur
+
 - name: Jail Chromium
   file: src=/usr/bin/firejail
         dest=/usr/local/bin/chromium
