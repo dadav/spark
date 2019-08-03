@@ -6,11 +6,13 @@
     - borg
 
 - name: Install borgmatic
-  aur:
-    name: "{{ item }}"
-    user: "{{ user.name }}"
-  with_items:
-    - python-pykwalify
-    - borgmatic
-  tags:
-    - aur
+  pip:
+    name: borgmatic
+    virtualenv: /usr/local/env/borgmatic
+    virtualenv_command: virtualenv3
+
+- name: Link borgmatic to bin
+  file:
+    src: /usr/local/env/borgmatic/bin/borgmatic
+    dest: /usr/local/bin/borgmatic
+    state: link
