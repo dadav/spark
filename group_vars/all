@@ -58,9 +58,10 @@ japanese:
     - otf-ipafont
     - noto-fonts-cjk
   packages:
-    - ibus
-    - ibus-anthy
-  service: True
+    - fcitx-mozc
+    - fcitx-configtool
+    - fcitx-gtk3
+    - fcitx-gtk2
 
 aur:
     dir: aur
