@@ -24,7 +24,7 @@ low() {
   message="Total capacity is at $capacity. We need more power, Scotty!"
   systemd-cat -t 'lowbatt' -p warning echo "$message"
   if [ -n "$NOTIFYUSER" ]; then
-      su "$NOTIFYUSER" -c "notify-send -t $MSGTIMEOUT --urgency=critical \"Low Battery\" \"$message\""
+    su "$NOTIFYUSER" -c "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u "$NOTIFYUSER")/bus notify-send -t $MSGTIMEOUT --urgency=critical \"Low Battery\" \"$message\""
   else
       notify-send -t "$MSGTIMEOUT" --urgency=critical "Low Battery" "$message"
   fi
