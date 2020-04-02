@@ -1,3 +1,6 @@
 *.retry
 ext_roles
 .vagrant
+log/*.log
+.cp/*
+!.cp/.gitkeep
