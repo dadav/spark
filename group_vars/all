@@ -17,17 +17,12 @@ gtk_font_size: '11'
 gtk_prefer_dark_theme_variant: True
 gtk_install_utils: True
 
-pass:
-  repo: 'git@git.intern.b1-systems.de:giese/passwords.git'
-  # enable this for cloning
-  # ssh_key_path: '/path/to/sshkey'
-
 user:
     name: ddavid
     uid: 1001
     non_unique: yes
     group: ddavid
-    shell: /bin/bash
+    shell: /bin/zsh
     email: nothing@example.com
     log:
         dir: log
