@@ -61,7 +61,9 @@ japanese:
 aur:
     dir: aur
     packages:
+        - yay
         - downgrade
+        - zplug
         - miller
 
 ssh:
@@ -95,18 +97,18 @@ editors:
     - python2-neovim
 
 code_extensions:
+    - editorconfig.editorconfig
     - DavidAnson.vscode-markdownlint
     - eamodio.gitlens
     - formulahendry.auto-close-tag
     - foxundermoon.shell-format
     - hangxingliu.vscode-systemd-support
     - joaompinto.asciidoctor-vscode
-    - jpogran.puppet-vscode
+    - puppet.puppet-vscode
     - LaurentTreguier.rpm-spec
     - ms-python.python
     - ms-vscode.Go
     - PeterJausovec.vscode-docker
-    - redhat.java
     - redhat.vscode-xml
     - redhat.vscode-yaml
     - rogalmic.bash-debug
@@ -145,12 +147,11 @@ base_packages:
     - progress
     - perf
     - perl-rename
+    - termdown
+    - fzf
+    - smartmontools
 
 terminals:
-  urxvt:
-    - rxvt-unicode
-    - rxvt-unicode-terminfo
-    - urxvt-perls
   kitty:
     - kitty
 
