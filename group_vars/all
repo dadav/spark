@@ -64,7 +64,6 @@ aur:
         - yay
         - downgrade
         - zplug
-        - miller
 
 ssh:
     port: 22
@@ -94,7 +93,6 @@ editors:
     - code
     - neovim
     - python-neovim
-    - python2-neovim
 
 code_extensions:
     - editorconfig.editorconfig

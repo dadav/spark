@@ -1,7 +1,7 @@
 ---
 - name: Install autorandr
   aur:
-    name: autorandr-git
+    name: autorandr
     user: "{{ user.name }}"
   tags:
     - aur
