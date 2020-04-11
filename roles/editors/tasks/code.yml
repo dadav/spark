@@ -1,4 +1,5 @@
----                                                                                                                                               
+---
+
 - name: Install code extensions
   shell: "code --install-extension {{ item }}"
   become: yes

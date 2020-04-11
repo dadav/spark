@@ -1,12 +1,11 @@
 ---
-- name: Install Bash
+- name: Install shells
   pacman:
     name: "{{ item }}"
     state: present
   loop:
     - bash
     - bash-completion
+    - zsh
   tags:
     - shell
-
-- include zsh.yml

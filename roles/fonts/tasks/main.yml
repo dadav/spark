@@ -38,7 +38,7 @@
 
 - name: Install AUR fonts
   aur:
-    name: [ 'ttf-signika', 'ttf-quintessential', 'ttf-oswald', 'ttf-courier-prime', 'ttf-heuristica', 'ttf-symbola', 'nerd-fonts-complete', 'nerd-fonts-iosevka', 'siji-git', 'ttf-font-awesome-4 ]
+    name: [ 'ttf-signika', 'ttf-quintessential', 'ttf-oswald', 'ttf-courier-prime', 'ttf-heuristica', 'ttf-symbola', 'nerd-fonts-complete', 'nerd-fonts-iosevka', 'siji-git', 'ttf-font-awesome-4' ]
     user: "{{ user.name }}"
   ignore_errors: True
   tags:

@@ -12,10 +12,11 @@
   tags:
     - packages
 
-- name: Push pacman mirror list update hook
-  copy: src=mirrorlist.hook dest=/etc/pacman.d/hooks/mirrorlist.hook
-  tags:
-    - packages
+- name: Use all cores when compressing packages
+  lineinfile:
+    dest: /etc/makepkg.conf
+    regexp: "^COMPRESSXZ"
+    line: "COMPRESSXZ=(xz -c -z - --threads=0)"
 
 - name: Create AUR directory
   file: path=/home/{{ user.name }}/{{ aur.dir }}
@@ -26,25 +27,10 @@
     - aur
     - packages
 
-- name: Install AUR bootstrap packages
-  include_role:
-    name: base
-    tasks_from: aur_bootstrap
-  vars:
-    pkg_name: "{{ item.name }}"
-    gpg_key: "{{ item.gpg_key }}"
-  with_items:
-    - name: cower
-      gpg_key: '1EB2638FF56C0C53'
-  tags:
-    - aur
-    - packages
-
 - name: Install AUR base packages
   aur:
-    name: "{{ item }}"
+    name: "{{ aur.packages }}"
     user: "{{ user.name }}"
-  with_items: "{{ aur.packages }}"
   tags:
     - aur
     - packages

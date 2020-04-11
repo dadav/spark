@@ -150,6 +150,7 @@ base_packages:
     - termdown
     - fzf
     - smartmontools
+    - logrotate
 
 terminals:
   kitty:
@@ -168,8 +169,8 @@ browser_choices:
 
 passwordless_sudo:
     - /usr/bin/openvpn*
-    - /usr/bin/makepkg*
-    - /usr/bin/pacman*
+    #- /usr/bin/makepkg*
+    #- /usr/bin/pacman*
 
 tarsnapper:
   deltas: 1h 1d 7d 30d 365d
