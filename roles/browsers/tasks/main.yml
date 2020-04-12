@@ -6,6 +6,23 @@
   package:
     name: qutebrowser
     state: installed
+  tags:
+    - qutebrowser
+
+- name: Jail Qutebrowser
+  file: src=/usr/bin/firejail
+        dest=/usr/local/bin/qutebrowser
+        state=link
+  tags:
+    - qutebrowser
+    - firejail
+
+- name: Install pdfjs for qutebrowser
+  pacman:
+    name: pdfjs
+    state: present
+  tags:
+    - qutebrowser
 
 - name: Install Firefox
   package: name=firefox state=present
@@ -39,8 +56,6 @@
   package: name=chromium state=present
   tags:
     - chromium
-
-
 
 - name: Install widevine (netflix support)
   aur:
@@ -78,29 +93,18 @@
   tags:
     - chromium
 
-- name: Import gpg key
-  shell: "gpg {{ ('--keyserver' + base_gpg_keyserver) if base_gpg_keyserver else '' }} --recv-keys 0x{{ item }}"
-  become: yes
-  become_user: "{{ user.name }}"
-  retries: 5
-  delay: 5
-  register: res
-  until: res.rc == 0
-  with_items:
-    - D1483FA6C3C07136
-
-- name: Install tor-browser-en
-  aur:
-    name: tor-browser-en
-    user: "{{ user.name }}"
+- name: Install Tor browser
+  pacman:
+    name: torbrowser-launcher
+    state: present
   tags:
     - tor-browser
-    - aur
 
-- name: Jail tor-browser-en
-  file: src=/usr/bin/firejail
-        dest=/usr/local/bin/tor-browser-en
-        state=link
+- name: Jail Tor browser
+  file:
+    src: /usr/bin/firejail
+    dest: /usr/local/bin/torbrowser-launcher
+    state: link
   tags:
     - tor-browser
     - firejail
@@ -154,8 +158,8 @@
 - name: Configure surfraw browser
   lineinfile:
     dest: /etc/xdg/surfraw/conf
-    regexp: '^def   SURFRAW_graphical_browser	'
-    line: 'def   SURFRAW_graphical_browser	/usr/local/bin/browser'
+    regexp: '^def\s+SURFRAW_graphical_browser\s+'
+    line: 'def SURFRAW_graphical_browser /usr/local/bin/browser'
   tags:
     - surfraw
     - chooser
