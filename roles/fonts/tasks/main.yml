@@ -28,23 +28,23 @@
 
 - name: Install core fonts
   pacman:
-    name: ['terminus-font', 'cantarell-fonts', 'noto-fonts', 'ttf-dejavu', 'ttf-liberation', 'gsfonts', 'tex-gyre-fonts', 'ttf-droid', 'ttf-ubuntu-font-family', 'ttf-hack', 'tamsyn-font']
+    name: ['ttf-dejavu', 'ttf-hack']
     state: present
 
-- name: Install gucharmap font viewer
-  package:
-    name: gucharmap
-    state: present
+#- name: Install gucharmap font viewer
+#  package:
+#    name: gucharmap
+#    state: present
 
 - name: Install AUR fonts
   aur:
-    name: [ 'ttf-signika', 'ttf-quintessential', 'ttf-oswald', 'ttf-courier-prime', 'ttf-heuristica', 'ttf-symbola', 'nerd-fonts-complete', 'nerd-fonts-iosevka', 'siji-git', 'ttf-font-awesome-4' ]
+    name: [ 'nerd-fonts-iosevka', 'ttf-font-awesome-4' ]
     user: "{{ user.name }}"
   ignore_errors: True
   tags:
     - aur
 
 - name: Install community fonts
-  package:
-    name: ['ttf-opensans', 'ttf-carlito', 'ttf-caladea']
+  pacman:
+    name: ['ttf-opensans', 'ttf-carlito', 'ttf-caladea', 'ttf-liberation', 'ttf-inconsolata']
     state: present

@@ -3,6 +3,7 @@
 Vagrant.configure("2") do |config|
   config.vbguest.auto_update = false
   config.ssh.insert_key = false
+  config.ssh.keep_alive = true
   config.vm.box = "archlinux/archlinux"
   config.vm.box_check_update = false
   config.vm.provider "virtualbox" do |vb|

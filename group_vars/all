@@ -52,6 +52,7 @@ japanese:
   fonts:
     - otf-ipafont
     - noto-fonts-cjk
+    - ttf-hanazono
   packages:
     - fcitx-mozc
     - fcitx-configtool
@@ -95,22 +96,22 @@ editors:
     - python-neovim
 
 code_extensions:
-    - editorconfig.editorconfig
     - DavidAnson.vscode-markdownlint
     - eamodio.gitlens
+    - editorconfig.editorconfig
     - formulahendry.auto-close-tag
     - foxundermoon.shell-format
     - hangxingliu.vscode-systemd-support
     - joaompinto.asciidoctor-vscode
-    - puppet.puppet-vscode
-    - LaurentTreguier.rpm-spec
+    - ms-azuretools.vscode-docker
     - ms-python.python
     - ms-vscode.Go
-    - PeterJausovec.vscode-docker
+    - puppet.puppet-vscode
     - redhat.vscode-xml
     - redhat.vscode-yaml
     - rogalmic.bash-debug
     - timonwong.shellcheck
+    - vscode-icons-team.vscode-icons
     - vscoss.vscode-ansible
 
 video_drivers:

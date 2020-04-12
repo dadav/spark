@@ -7,7 +7,7 @@
 
 - name: Install polybar
   aur:
-    name: "polybar-git"
+    name: "polybar"
     user: "{{ user.name }}"
   tags:
     - aur
