@@ -148,6 +148,7 @@ base_packages:
     - perl-rename
     - termdown
     - fzf
+    - fd
     - bat
     - smartmontools
     - logrotate
