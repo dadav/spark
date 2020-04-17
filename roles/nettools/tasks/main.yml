@@ -15,7 +15,7 @@
   pacman: name=whois state=present
 
 - name: Install netcat
-  pacman: name=gnu-netcat state=present
+  pacman: name=openbsd-netcat state=present
 
 - name: Install nmap
   pacman: name=nmap state=present
