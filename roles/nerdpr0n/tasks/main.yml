@@ -2,8 +2,10 @@
 - name: Install some nice things
   pacman:
     name: "{{ item }}"
-  with_items:
+  loop:
     - cowsay
+    - ccze
+    - lolcat
 
 - name: Install some nice things, coming from AUR
   aur:
