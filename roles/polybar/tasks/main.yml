@@ -1,0 +1,21 @@
+---
+- name: Install polybar
+  aur:
+    name: polybar
+    user: {{ user.name }}
+  tags:
+    - aur
+
+- name: Jail polybar
+  file: src=/usr/bin/firejail
+        dest=/usr/local/bin/polybar
+        state=link
+  tags:
+    - firejail
+
+- name: Push polybar firejail profile
+  copy: src=firejail/polybar.profile dest=/usr/local/etc/firejail/polybar.profile
+  notify:
+    - activate firejail profiles
+  tags:
+    - firejail
