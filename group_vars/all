@@ -119,6 +119,7 @@ base_packages:
     - bat
     - smartmontools
     - logrotate
+    - the_silver_searcher
 
 terminals:
   kitty:
