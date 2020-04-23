@@ -6,6 +6,7 @@
     - cowsay
     - ccze
     - lolcat
+    - diff-so-fancy
 
 - name: Install some nice things, coming from AUR
   aur:
