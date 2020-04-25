@@ -150,10 +150,19 @@ tor:
 localtime:
     run_on: trusted
 
-nameservers:
-    - 8.8.8.8       # Google
-    - 209.244.0.3   # Level 3
-    - 74.82.42.42   # Hurricane Electric
+unbound:
+    tls: True
+    roothints_update: trusted
+    nameservers:
+        - 192.168.0.51 # pihole
+        - 1.1.1.1@853#cloudflare-dns.com  # Cloudflare
+        - 9.9.9.9@853#dns.quad9.net  # Quad9
+    private_domains:
+        - home
+        - intranet
+        - lan
+        - private
+    allow_lan_dns: True
 
 bluetooth:
     disable: False

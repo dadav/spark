@@ -13,11 +13,17 @@ Vagrant.configure("2") do |config|
     # Customize the amount of memory on the VM:
     vb.memory = "2048"
   end
-  config.vm.provision "shell", inline: <<SCRIPT
-echo Installing python
-pacman -S --noconfirm --needed python
-#pacman-key --init
-#pacman-key -u --refresh-keys
+  config.vm.provision "shell", inline: <<-SCRIPT
+  echo Updating mirrorlist
+  >/tmp/mirrorlist curl "https://www.archlinux.org/mirrorlist/?country=DE&protocol=http&protocol=https&ip_version=4" && \
+  mv /tmp/mirrorlist /etc/pacman.d/mirrorlist && \
+  sed -i 's/^#Server/Server/g' /etc/pacman.d/mirrorlist
+  pacman -Sy
+
+  echo Installing python
+  pacman -S --noconfirm --needed python
+  #pacman-key --init
+  #pacman-key -u --refresh-keys
 SCRIPT
   config.vm.provision "ansible" do |ansible|
     # ansible.tags = "base,anki"

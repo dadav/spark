@@ -20,6 +20,8 @@
     - { role: i3, tags: ['i3'] }
     - { role: iptables, tags: ['iptables'] }
     - { role: nettools, tags: ['nettools'] }
+    - { role: openresolv, tags: ['openresolv'] }
+    - { role: unbound, tags: ['unbound'] }
     - { role: networkmanager, tags: ['networkmanager'] }
     - { role: ntp, tags: ['ntp'] }
     - { role: firejail, tags: ['firejail'] }
