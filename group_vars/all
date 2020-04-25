@@ -20,6 +20,10 @@ dotfiles:
     url: https://github.com/dadav/dotfiles.git
     destination: git/dotfiles
 
+scripts:
+    url: https://github.com/dadav/scripts.git
+    destination: git/scripts
+
 anki:
   addons:
     git:
