@@ -2,6 +2,7 @@ vagrant_testing: false
 
 autologin: True
 autologin_tty: 'tty1'
+linger: True
 
 user:
     name: ddavid

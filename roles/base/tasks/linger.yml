@@ -1,0 +1,5 @@
+- name: Enable linger for user
+  file:
+    path: /var/lib/systemd/linger/{{ user.name }}
+    state: touch
+  when: linger
