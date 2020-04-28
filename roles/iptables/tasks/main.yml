@@ -1,4 +1,7 @@
 ---
+- name: Install iptables
+  pacman: name=iptables state=present
+
 - name: Push firewall config
   template: src=iptables.rules.j2 dest=/etc/iptables/iptables.rules
   notify:

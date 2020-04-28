@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
   >/tmp/mirrorlist curl "https://www.archlinux.org/mirrorlist/?country=DE&protocol=http&protocol=https&ip_version=4" && \
   mv /tmp/mirrorlist /etc/pacman.d/mirrorlist && \
   sed -i 's/^#Server/Server/g' /etc/pacman.d/mirrorlist
-  pacman -Sy
+  pacman -Syu --noconfirm
 
   echo Installing python
   pacman -S --noconfirm --needed python

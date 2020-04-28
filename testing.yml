@@ -14,6 +14,7 @@
     - { role: ssh, tags: ['ssh'] }
     - { role: editors, tags: ['editors'] }
     - { role: dotfiles, tags: ['dotfiles'] }
+    - { role: tmpfiles, tags: ['tmpfiles'] }
     - { role: ssd, tags: ['ssd'] }
     - { role: fonts, tags: ['fonts'] }
     - { role: x, tags: ['x'] }
