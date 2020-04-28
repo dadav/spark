@@ -117,13 +117,8 @@ base_packages:
     - progress
     - perf
     - perl-rename
-    - termdown
-    - fzf
-    - fd
-    - bat
     - smartmontools
     - logrotate
-    - the_silver_searcher
 
 terminals:
   kitty:

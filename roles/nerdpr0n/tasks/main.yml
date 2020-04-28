@@ -7,8 +7,15 @@
     - ccze
     - lolcat
     - diff-so-fancy
+    - fd
+    - bat
+    - fzf
+    - the_silver_searcher
+    - termdown
 
 - name: Install some nice things, coming from AUR
   aur:
     name: toilet
     user: "{{ user.name }}"
+  tags:
+    - aur
