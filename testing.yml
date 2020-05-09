@@ -32,6 +32,7 @@
     - { role: spell, tags: ['spell'] }
     - { role: browsers, tags: ['browsers'] }
     - { role: media, tags: ['media'] }
+    - { role: container, tags: ['container'] }
     # - { role: mpd, tags: ['mpd'] }
     - { role: mpv, tags: ['mpv'] }
     # - { role: pianobar, tags: ['pianobar'] }

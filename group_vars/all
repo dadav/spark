@@ -25,6 +25,19 @@ scripts:
     url: https://github.com/dadav/scripts.git
     destination: git/scripts
 
+container:
+  docker:
+    group: docker
+    service: docker
+  packages:
+    docker:
+      - docker
+      - docker-compose
+    podman:
+      - podman
+    oci:
+      - buildah
+
 anki:
   addons:
     git:
@@ -32,6 +45,8 @@ anki:
     official:
       - 498789867  # Replay Button
       - 3918629684 # Japanese Support
+      #      - 327282518 # forivy addon
+      #      - 2090845100 # aws polly
 
 japanese:
   fonts:
@@ -70,6 +85,7 @@ editors:
 code_extensions:
     - DavidAnson.vscode-markdownlint
     - eamodio.gitlens
+    - mhutchie.git-graph
     - editorconfig.editorconfig
     - formulahendry.auto-close-tag
     - foxundermoon.shell-format

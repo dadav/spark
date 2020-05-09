@@ -1,0 +1,44 @@
+---
+
+- name: Install container packages
+  pacman:
+    name: "{{ item.value }}"
+    state: installed
+  with_dict: "{{ container.packages }}"
+  tags:
+    - container
+
+- name: Add user to docker group
+  user:
+    name: "{{ user.name }}"
+    append: yes
+    groups: "{{ container.docker.group }}"
+
+- name: Enable and start the docker server
+  service:
+    name: "{{ container.docker.service }}"
+    state: started
+    enabled: yes
+
+- name: Add user to subuid/gid
+  lineinfile:
+    path: "{{ item }}"
+    regexp: "^{{ user.name }}:"
+    line: "{{ user.name }}:100000:65536"
+    create: yes
+  loop:
+    - /etc/subuid
+    - /etc/subgid
+
+- name: Check if user namespaces are supported
+  shell: zgrep CONFIG_USER_NS /proc/config.gz | grep "^CONFIG_USER_NS=y$"
+  register: user_namespace_support
+
+- name: Enable user namespaces
+  sysctl:
+    name: kernel.unprivileged_userns_clone
+    value: '1'
+    sysctl_set: yes
+    state: present
+    reload: yes
+  when: user_namespace_support|success
