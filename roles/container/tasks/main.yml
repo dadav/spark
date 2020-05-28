@@ -8,17 +8,25 @@
   tags:
     - container
 
-- name: Add user to docker group
-  user:
-    name: "{{ user.name }}"
-    append: yes
-    groups: "{{ container.docker.group }}"
+- name: Install dive
+  aur:
+    name: dive
+    user: "{{ user.name }}"
+  tags:
+    - aur
+    - container
 
-- name: Enable and start the docker server
-  service:
-    name: "{{ container.docker.service }}"
-    state: started
-    enabled: yes
+# - name: Add user to docker group
+#   user:
+#     name: "{{ user.name }}"
+#     append: yes
+#     groups: "{{ container.docker.group }}"
+
+# - name: Enable and start the docker server
+#   service:
+#     name: "{{ container.docker.service }}"
+#     state: started
+#     enabled: yes
 
 - name: Add user to subuid/gid
   lineinfile:

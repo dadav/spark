@@ -30,9 +30,9 @@ container:
     group: docker
     service: docker
   packages:
-    docker:
-      - docker
-      - docker-compose
+    # docker:
+    #   - docker
+    #   - docker-compose
     podman:
       - podman
     oci:
