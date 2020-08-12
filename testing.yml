@@ -11,7 +11,6 @@
     - { role: cron, tags: ['cron'] }
     - { role: microcode, tags: ['microcode'], when: "'GenuineIntel' in ansible_processor" }
     - { role: hardened, tags: ['hardened'] }
-    - { role: ssh, tags: ['ssh'] }
     - { role: editors, tags: ['editors'] }
     - { role: dotfiles, tags: ['dotfiles'] }
     - { role: tmpfiles, tags: ['tmpfiles'] }
@@ -19,7 +18,7 @@
     - { role: fonts, tags: ['fonts'] }
     - { role: x, tags: ['x'] }
     - { role: i3, tags: ['i3'] }
-    - { role: iptables, tags: ['iptables'] }
+    - { role: firewalld, tags: ['firewalld'] }
     - { role: nettools, tags: ['nettools'] }
     - { role: openresolv, tags: ['openresolv'] }
     - { role: unbound, tags: ['unbound'] }
@@ -63,5 +62,6 @@
     - { role: wttr, tags: ['wttr'] }
     # - { role: hostsctl, tags: ['hostsctl'], when: "hostsctl is defined" }
     # - { role: kiwix, tags: ['kiwix'] }
+    - { role: ssh, tags: ['ssh'] }
   vars:
     user_password: 'foobar'

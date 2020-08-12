@@ -1,0 +1,27 @@
+---
+- package:
+    name: firewalld
+    state: present
+
+- service:
+    name: firewalld
+    state: started
+    enabled: yes
+
+- name: Setup services
+  include_role:
+    name: firewalld
+    tasks_from: service
+  vars:
+    zone: "{{ item.zone }}"
+    services: "{{ item.data.services|default([]) }}"
+  loop: "{{ firewalld|dict2items(key_name='zone', value_name='data') }}"
+
+- name: Setup Ports
+  include_role:
+    name: firewalld
+    tasks_from: port
+  vars:
+    zone: item.zone
+    ports: "{{ item.data.ports|default([]) }}"
+  loop: "{{ firewalld|dict2items(key_name='zone', value_name='data') }}"

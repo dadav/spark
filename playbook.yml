@@ -11,14 +11,13 @@
     - { role: cron, tags: ['cron'] }
     - { role: microcode, tags: ['microcode'], when: "'GenuineIntel' in ansible_processor" }
     - { role: hardened, tags: ['hardened'] }
-    - { role: ssh, tags: ['ssh'] }
     - { role: editors, tags: ['editors'] }
     - { role: dotfiles, tags: ['dotfiles'] }
     - { role: ssd, tags: ['ssd'] }
     - { role: fonts, tags: ['fonts'] }
     - { role: x, tags: ['x'] }
     - { role: i3, tags: ['i3'] }
-    - { role: iptables, tags: ['iptables'] }
+    - { role: firewalld, tags: ['firewalld'] }
     - { role: nettools, tags: ['nettools'] }
     - { role: openresolv, tags: ['openresolv'] }
     - { role: unbound, tags: ['unbound'] }
@@ -58,6 +57,7 @@
     - { role: nerdpr0n, tags: ['nerdpro0n'] }
     # - { role: bluetooth, tags: ['bluetooth'], when: "bluetooth is defined" }
     - { role: wttr, tags: ['wttr'] }
+    - { role: ssh, tags: ['ssh'] }
   vars_prompt:
     - name: user_password
       prompt: "Enter desired user password"

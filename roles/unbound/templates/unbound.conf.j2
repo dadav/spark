@@ -1,4 +1,5 @@
-{% if unbound.allow_lan_dns %}include: "/etc/unbound/resolvconf.conf"
+{% if unbound.allow_lan_dns -%}
+include: "/etc/unbound/resolvconf.conf"
 {% endif %}
 
 server:

@@ -47,6 +47,13 @@ anki:
       - 3918629684 # Japanese Support
       #      - 327282518 # forivy addon
       #      - 2090845100 # aws polly
+      #
+
+firewalld:
+  home:
+    services:
+      - dhcpv6-client
+      - ssh
 
 japanese:
   fonts:
@@ -93,7 +100,7 @@ code_extensions:
     - joaompinto.asciidoctor-vscode
     - ms-azuretools.vscode-docker
     - ms-python.python
-    - ms-vscode.Go
+    - golang.go
     - puppet.puppet-vscode
     - redhat.vscode-xml
     - redhat.vscode-yaml
@@ -101,6 +108,7 @@ code_extensions:
     - timonwong.shellcheck
     - vscode-icons-team.vscode-icons
     - vscoss.vscode-ansible
+    - castwide.solargraph
 
 video_drivers:
     - mesa

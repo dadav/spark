@@ -34,3 +34,15 @@
 
 - name: Install speedtest-cli
   pacman: name=speedtest-cli state=present
+
+- name: Install httpstat into virtual environment
+  pip:
+    name: httpstat
+    virtualenv: /usr/local/env/httpstat
+    virtualenv_command: virtualenv3
+
+- name: Link httpstat to bin
+  file:
+    src: /usr/local/env/httpstat/bin/httpstat
+    dest: /usr/local/bin/httpstat
+    state: link

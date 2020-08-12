@@ -1,0 +1,13 @@
+---
+- name: setup ports
+  firewalld:
+    state: enabled
+    zone: "{{ zone }}"
+    immediate: yes
+    permanent: yes
+    port: "{{ port }}"
+  loop: "{{ ports }}"
+  loop_control:
+    loop_var: port
+  notify:
+    - restart firewalld

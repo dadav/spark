@@ -7,26 +7,11 @@
 
 - name: Enable and start OpenSSH
   service: name=sshd.service enabled=yes state=started
-  when: ssh.enable_sshd == True
+  when: ssh.enable_sshd
 
 - name: Disable and stop OpenSSH
   service: name=sshd.service enabled=no state=stopped
-  when: ssh.enable_sshd == False
-
-- name: Generate an OpenSSL public key in OpenSSH v2 format
-  openssl_publickey:
-    path: /tmp/insecure.pub
-    privatekey_path: "{{ ansible_env.HOME }}/.vagrant.d/insecure_private_key"
-    format: OpenSSH
-  delegate_to: 127.0.0.1
-  when: vagrant_testing
-
-- name: Copy key to machine
-  authorized_key:
-    user: "{{ user.name }}"
-    state: present
-    key: "{{ lookup('file', '/tmp/insecure.pub') }}"
-  when: vagrant_testing
+  when: not ssh.enable_sshd
 
 - name: Install sshfs
   pacman: name=sshfs state=present

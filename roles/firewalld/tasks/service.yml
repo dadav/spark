@@ -1,0 +1,13 @@
+---
+- name: setup firewalld service
+  firewalld:
+    state: enabled
+    zone: "{{ zone }}"
+    immediate: yes
+    permanent: yes
+    service: "{{ service }}"
+  loop: "{{ services }}"
+  loop_control:
+    loop_var: service
+  notify:
+    - restart firewalld

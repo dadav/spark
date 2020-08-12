@@ -1,9 +1,12 @@
 ---
 
 - name: Install code extensions
-  shell: "code --install-extension {{ item }}"
+  shell: "code --list-extensions | grep {{ item }} || code --install-extension {{ item }}"
   become: yes
   become_user: "{{ user.name }}"
+  ignore_errors: yes
+  changed_when: '"was successfully installed" in install_result.stdout'
+  register: install_result
   with_items: "{{ code_extensions }}"
 
 - name: Jail code
