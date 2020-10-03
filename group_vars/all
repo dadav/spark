@@ -155,7 +155,6 @@ filesystem_packages:
     - exfat-utils
 
 browser_choices:
-    - firejail firefox -P default
     - firewarden chromium
     - firejail chromium --disk-cache-dir=/tmp/chromium-cache
     - firejail qutebrowser

@@ -1,3 +1,3 @@
 - name: Install additional tools
   pacman:
-    name: [ 'i3lock', 'i3blocks', 'i3status', 'dunst', 'redshift', 'compton' ]
+    name: [ 'i3lock', 'i3blocks', 'i3status', 'dunst', 'redshift', 'picom' ]
