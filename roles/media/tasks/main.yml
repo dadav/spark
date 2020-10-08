@@ -43,6 +43,11 @@
 #   tags:
 #     - aur
 
+- name: Install streamlink
+  package:
+    name: streamlink
+    state: present
+
 - name: Install youtube-dl
   package:
     name: youtube-dl
