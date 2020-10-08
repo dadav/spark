@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CRITICAL=5
-LOW=10
+LOW=15
 VERBOSE=false
 MSGTIMEOUT=10000
 
