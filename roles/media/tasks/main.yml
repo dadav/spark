@@ -1,18 +1,13 @@
 ---
 - include: ffmpeg.yml
-#- include: beets.yml
+- include: mpv.yml
 - include: abcde.yml
 - include: xfburn.yml
 - include: imagemagick.yml
-#- include: inkscape.yml
 - include: gimp.yml
-# - include: gthumb.yml
 - include: feh.yml
 - include: imv.yml
-# - include: mcomix.yml
 - include: teiler.yml
-# - include: flac2all.yml
-# - include: darktable.yml
 - include: qcode.yml
 
 - name: Install music players
@@ -32,17 +27,6 @@
     - perl-image-exiftool
     - opus-tools
 
-# - name: Install Metadata Anonymisation Toolkit and dependencies
-#   aur:
-#     name: "{{ item }}"
-#     user: "{{ user.name }}"
-#   with_items:
-#     - hachoir-core
-#     - hachoir-parser
-#     - mat
-#   tags:
-#     - aur
-
 - name: Install streamlink
   package:
     name: streamlink
@@ -56,11 +40,6 @@
 - name: Install aria2 used by youtube-dl
   package:
     name: aria2
-    state: present
-
-- name: Install clementine
-  package:
-    name: clementine
     state: present
 
 - name: Install playerctl
