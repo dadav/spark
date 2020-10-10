@@ -4,6 +4,7 @@
   roles:
     - { role: base, tags: ['base'] }
     - { role: sysmon, tags: ['sysmon'] }
+    - { role: zeal, tags: ['zeal'] }
     - { role: clipboard, tags: ['clipboard'] }
     - { role: anki, tags: ['anki'] }
     - { role: terminals, tags: ['terminal'] }
