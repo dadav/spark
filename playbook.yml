@@ -3,6 +3,7 @@
   become: yes
   roles:
     - { role: base, tags: ['base'] }
+    - { role: sysmon, tags: ['sysmon'] }
     - { role: anki, tags: ['anki'] }
     - { role: terminals, tags: ['terminal'] }
     - { role: japanesify, tags: ['japanese'] }

@@ -114,36 +114,32 @@ video_drivers:
     - mesa
 
 base_packages:
+    - arch-wiki-docs
+    - arch-wiki-lite
     - base-devel
-    - perl
-    - tmux
-    - git
-    - rsync
-    - dateutils
+    - bc
     - coreutils
+    - dateutils
+    - git
+    - jq
+    - logrotate
     - moreutils
     - most
-    - reflector
-    - bc
-    - strace
-    - lsof
-    - sysstat
-    - arch-wiki-lite
-    - arch-wiki-docs
+    - perf
+    - perl
+    - perl-rename
+    - progress
+    - pv
+    - python2-docs
+    - python-docs
     - python-keyring
     - python-secretstorage
+    - reflector
+    - rsync
     - ruby
-    - pv
-    - jq
-    - python-docs
-    - python2-docs
     - screen
+    - tmux
     - units
-    - progress
-    - perf
-    - perl-rename
-    - smartmontools
-    - logrotate
 
 terminals:
   kitty:
