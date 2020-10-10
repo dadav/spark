@@ -35,21 +35,15 @@
     - { role: laptop, tags: ['laptop'] }
     - { role: thinkpad, tags: ['thinkpad', 'fingerprint'], when: "'ThinkPad' in ansible_product_version" }
     - { role: screensaver, tags: ['screensaver'] }
-    - { role: weechat, tags: ['weechat'] }
-    - { role: taskwarrior, tags: ['taskwarrior'] }
     - { role: cups, tags: ['cups'] }
     - { role: office, tags: ['office'] }
     - { role: redshift, tags: ['redshift'] }
     - { role: virtualbox, tags: ['virtualbox'] }
     - { role: virtualenv, tags: ['virtualenv'] }
-    - { role: borg, tags: ['borg'] }
+    - { role: syncthing, tags: ['syncthing'] }
     - { role: sound, tags: ['sound'] }
-    # - { role: pim, tags: ['pim'] }
+    - { role: calibre, tags: ['calibre'] }
     # - { role: radio, tags: ['radio'] }
-    # - { role: formd, tags: ['formd'] }
-    # - { role: calibre, tags: ['calibre'] }
-    # - { role: aws, tags: ['aws'] }
-    # - { role: parcimonie, tags: ['parcimonie'], when: "tor is defined" }
     # - { role: localtime, tags: ['localtime'], when: "localtime is defined" }
     - { role: nerdpr0n, tags: ['nerdpro0n'] }
     # - { role: bluetooth, tags: ['bluetooth'], when: "bluetooth is defined" }
