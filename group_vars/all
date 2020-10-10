@@ -151,10 +151,12 @@ filesystem_packages:
     - exfat-utils
 
 browser_choices:
-    - firewarden chromium
+    - firefail firefox
     - firejail chromium --disk-cache-dir=/tmp/chromium-cache
     - firejail qutebrowser
     - firejail torbrowser-launcher
+    - firewarden chromium
+    - firewarden firefox
 
 passwordless_sudo:
     - /usr/bin/openvpn*
