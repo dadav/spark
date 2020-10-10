@@ -1,9 +1,3 @@
-[submodule "backitup"]
-	path = roles/backitup/files/backitup
-	url = https://github.com/pigmonkey/backitup
-[submodule "cryptshot"]
-	path = roles/cryptshot/files/cryptshot
-	url = https://github.com/pigmonkey/cryptshot
 [submodule "ansible-aur"]
 	path = library/ansible-aur
 	url = git@github.com:pigmonkey/ansible-aur.git
