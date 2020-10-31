@@ -8,6 +8,13 @@
 - name: Installing ruby
   package: name=ruby state=present
 
+- name: Install rbenv
+  aur:
+    name: rbenv
+    user: "{{ user.name }}"
+  tags:
+    - aur
+
 - name: Install prompt_toolkit
   pip:
     name: prompt_toolkit
@@ -19,3 +26,4 @@
     src: /usr/local/env/prompt_toolkit/bin/ptpython
     dest: /usr/local/bin/ptpython
     state: link
+
