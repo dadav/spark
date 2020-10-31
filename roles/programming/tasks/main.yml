@@ -1,0 +1,21 @@
+---
+- name: Installing python3
+  package: name=python3 state=present
+
+- name: Installing go
+  package: name=go state=present
+
+- name: Installing ruby
+  package: name=ruby state=present
+
+- name: Install prompt_toolkit
+  pip:
+    name: prompt_toolkit
+    virtualenv: /usr/local/env/prompt_toolkit
+    virtualenv_command: virtualenv3
+
+- name: Link ptpython to bin
+  file:
+    src: /usr/local/env/prompt_toolkit/bin/ptpython
+    dest: /usr/local/bin/ptpython
+    state: link

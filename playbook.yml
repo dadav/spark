@@ -4,6 +4,7 @@
   roles:
     - { role: base, tags: ['base'] }
     - { role: sysmon, tags: ['sysmon'] }
+    - { role: programming, tags: ['programming'] }
     - { role: zeal, tags: ['zeal'] }
     - { role: clipboard, tags: ['clipboard'] }
     - { role: anki, tags: ['anki'] }
@@ -46,7 +47,6 @@
     - { role: syncthing, tags: ['syncthing'] }
     - { role: sound, tags: ['sound'] }
     - { role: calibre, tags: ['calibre'] }
-    # - { role: radio, tags: ['radio'] }
     # - { role: localtime, tags: ['localtime'], when: "localtime is defined" }
     - { role: nerdpr0n, tags: ['nerdpro0n'] }
     # - { role: bluetooth, tags: ['bluetooth'], when: "bluetooth is defined" }
