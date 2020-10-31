@@ -2,7 +2,7 @@
 - name: Install polybar
   aur:
     name: polybar
-    user: {{ user.name }}
+    user: "{{ user.name }}"
   tags:
     - aur
 

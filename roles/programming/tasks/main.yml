@@ -21,6 +21,12 @@
     virtualenv: /usr/local/env/prompt_toolkit
     virtualenv_command: virtualenv3
 
+- name: Install ptpython
+  pip:
+    name: ptpython
+    virtualenv: /usr/local/env/prompt_toolkit
+    virtualenv_command: virtualenv3
+
 - name: Link ptpython to bin
   file:
     src: /usr/local/env/prompt_toolkit/bin/ptpython

@@ -1,16 +1,14 @@
 ---
 - name: Install zeal
   aur:
-    name:
-      - zeal
+    name: zeal
     user: "{{ user.name }}"
   tags:
     - aur
 
 - name: Install rofi-zeal
   aur:
-    name:
-      - rofi-zeal-git
+    name: rofi-zeal-git
     user: "{{ user.name }}"
   tags:
     - aur
