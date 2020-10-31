@@ -32,8 +32,8 @@
 - name: Install nethogs
   pacman: name=nethogs state=present
 
-- name: Install corc
-  pacman: name=corc state=present
+- name: Install croc
+  pacman: name=croc state=present
 
 - name: Install speedtest-cli
   pacman: name=speedtest-cli state=present
