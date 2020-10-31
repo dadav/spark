@@ -8,10 +8,3 @@
     user: "{{ user.name }}"
   tags:
     - aur
-
-- name: Link mapboxcli to bin
-  file: src=/usr/local/env/ffmpeg-normalize/bin/ffmpeg-normalize
-    dest=/usr/local/bin/ffmpeg-normalize
-    state=link
-  tags:
-    - aur

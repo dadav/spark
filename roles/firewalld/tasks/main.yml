@@ -8,6 +8,10 @@
     state: started
     enabled: yes
 
+- name: Reboot
+  reboot:
+    reboot_timeout: 300
+
 - name: Setup services
   include_role:
     name: firewalld

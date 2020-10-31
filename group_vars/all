@@ -44,7 +44,7 @@ anki:
       review-heatmap: https://github.com/glutanimate/review-heatmap.git
     official:
       - 498789867  # Replay Button
-      - 3918629684 # Japanese Support
+      # - 3918629684 # Japanese Support
       #      - 327282518 # forivy addon
       #      - 2090845100 # aws polly
       #
@@ -96,8 +96,6 @@ code_extensions:
     - editorconfig.editorconfig
     - formulahendry.auto-close-tag
     - foxundermoon.shell-format
-    - hangxingliu.vscode-systemd-support
-    - joaompinto.asciidoctor-vscode
     - ms-azuretools.vscode-docker
     - ms-python.python
     - golang.go
@@ -107,7 +105,6 @@ code_extensions:
     - rogalmic.bash-debug
     - timonwong.shellcheck
     - vscode-icons-team.vscode-icons
-    - vscoss.vscode-ansible
     - castwide.solargraph
 
 video_drivers:

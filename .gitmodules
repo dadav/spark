@@ -1,6 +1,3 @@
 [submodule "ansible-aur"]
 	path = library/ansible-aur
 	url = git@github.com:pigmonkey/ansible-aur.git
-[submodule "nmtrust"]
-	path = roles/networkmanager/files
-	url = git@github.com:pigmonkey/nmtrust.git
