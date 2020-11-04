@@ -1,3 +1,8 @@
 - name: Install additional tools
   pacman:
-    name: [ 'i3lock', 'i3blocks', 'i3status', 'dunst', 'redshift', 'picom' ]
+    name: [ 'i3lock', 'i3blocks', 'i3status', 'dunst', 'redshift', 'picom']
+
+- name: Install wmfocus
+  aur:
+    name: wmfocus
+    user: "{{ user.name }}"
