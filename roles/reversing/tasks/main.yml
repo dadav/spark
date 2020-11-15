@@ -7,3 +7,11 @@
     - ghidra
     - binwalk
     - gdb
+    - radare2
+
+- name: Install ida-free
+  aur:
+    name: ida-free
+    user: "{{ user.name }}"
+  tags:
+    - aur
