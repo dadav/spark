@@ -53,6 +53,7 @@
     # - { role: bluetooth, tags: ['bluetooth'], when: "bluetooth is defined" }
     - { role: wttr, tags: ['wttr'] }
     - { role: ssh, tags: ['ssh'] }
+    - { role: psi-notify, tags: ['psi-notify'] }
   vars_prompt:
     - name: user_password
       prompt: "Enter desired user password"

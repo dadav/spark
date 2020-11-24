@@ -1,0 +1,16 @@
+---
+- name: Install psi-notify
+  aur:
+    name: "psi-notify"
+    user: "{{ user.name }}"
+  tags:
+    - aur
+
+- name: "Start psi-notify service for user {{ user.name }}"
+  service:
+    name: psi-notify
+    state: started
+    enabled: yes
+    scope: user
+  become: yes
+  become_user: "{{ user.name }}"
