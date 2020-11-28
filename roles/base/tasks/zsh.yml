@@ -1,0 +1,14 @@
+---
+- name: Install zsh stuff
+  pacman:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - zsh
+    - zsh-theme-powerlevel10k
+    - zsh-history-substring-search
+    - zsh-syntax-highlighting
+    - zsh-autosuggestions
+    - zsh-completions
+  tags:
+    - shell

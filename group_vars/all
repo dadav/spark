@@ -137,6 +137,8 @@ base_packages:
     - screen
     - tmux
     - units
+    - fzf
+    - z
 
 terminals:
   kitty:

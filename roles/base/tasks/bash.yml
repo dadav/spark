@@ -1,0 +1,10 @@
+---
+- name: Install bash
+  pacman:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - bash
+    - bash-completion
+  tags:
+    - shell
