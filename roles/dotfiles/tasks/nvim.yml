@@ -1,4 +1,10 @@
 ---
+- name: Install plugin deps
+  pacman: name="{{ item }}" state=present
+  loop:
+    - python-pyling
+    - python-rope
+
 - name: Make sure nvim plugins are installed correctly
   shell: 'nvim +PlugUpgrade +PlugUpdate +qall --headless'
   become: True
