@@ -87,7 +87,6 @@ network:
 editors:
     - code
     - neovim
-    - python-neovim
 
 code_extensions:
     - DavidAnson.vscode-markdownlint

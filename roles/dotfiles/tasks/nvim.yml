@@ -3,6 +3,7 @@
   pacman: name="{{ item }}" state=present
   loop:
     - flake8
+    - autopep8
     - python-black
     - python-isort
     - python-pylint
