@@ -2,9 +2,12 @@
 - name: Install plugin deps
   pacman: name="{{ item }}" state=present
   loop:
+    - flake8
+    - python-black
+    - python-isort
     - python-pylint
-    - python-rope
     - python-pynvim
+    - python-rope
 
 - name: Make sure nvim plugins are installed correctly
   shell: 'nvim +PlugUpgrade +PlugUpdate +qall --headless'
