@@ -11,7 +11,9 @@
     - bat
     - fzf
     - the_silver_searcher
+    - ripgrep
     - termdown
+    - lsd
 
 - name: Install some nice things, coming from AUR
   aur:
