@@ -9,6 +9,7 @@
 - include: imv.yml
 - include: teiler.yml
 - include: qcode.yml
+- include: spotify.yml
 
 - name: Install music players
   pacman: name={{ item }} state=present
