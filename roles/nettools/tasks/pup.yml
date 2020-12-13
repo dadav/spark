@@ -1,0 +1,8 @@
+---
+- name: Install pup (html parser)
+  aur:
+    name: pup
+    user: "{{ user.name }}"
+  tags:
+    - aur
+    - pup

@@ -49,3 +49,5 @@
     src: /usr/local/env/httpstat/bin/httpstat
     dest: /usr/local/bin/httpstat
     state: link
+
+- include: pup.yml
