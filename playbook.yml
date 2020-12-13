@@ -51,7 +51,6 @@
     # - { role: localtime, tags: ['localtime'], when: "localtime is defined" }
     - { role: nerdpr0n, tags: ['nerdpro0n'] }
     # - { role: bluetooth, tags: ['bluetooth'], when: "bluetooth is defined" }
-    - { role: wttr, tags: ['wttr'] }
     - { role: ssh, tags: ['ssh'] }
     - { role: psi-notify, tags: ['psi-notify'] }
   vars_prompt:
